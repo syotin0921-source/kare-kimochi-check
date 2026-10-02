@@ -3,24 +3,23 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#fffafa">
+<meta name="theme-color" content="#fff9fa">
 <title>彼の気持ちチェック｜あと1分。</title>
 <link rel="manifest" href="manifest.json">
 
 <style>
 :root{
-  --pink:#ff5f80;
-  --pink-dark:#ef4f72;
-  --pink-soft:#fff0f4;
-  --pink-soft2:#fff7f9;
-  --ink:#272326;
-  --muted:#756d71;
-  --line:#f1d9e0;
-  --white:#fff;
+  --pink:#ff5f7d;
+  --pink-soft:#fff0f3;
+  --pink-pale:#fff7f9;
+  --ink:#282326;
+  --muted:#82787c;
+  --line:#f0d7de;
 }
 
 *{
   box-sizing:border-box;
+  -webkit-tap-highlight-color:transparent;
 }
 
 html{
@@ -30,15 +29,10 @@ html{
 body{
   margin:0;
   background:
-    radial-gradient(circle at 50% 0%,#fff3f6 0,#fffafa 30%,#fff 70%);
+    radial-gradient(circle at 50% 0%,#fff4f6 0,#fffafa 38%,#fff 100%);
   color:var(--ink);
-  font-family:
-    -apple-system,
-    BlinkMacSystemFont,
-    "Hiragino Sans",
-    "Yu Gothic",
-    sans-serif;
-  -webkit-font-smoothing:antialiased;
+  font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans",
+              "Yu Gothic","YuGothic",sans-serif;
 }
 
 button{
@@ -48,303 +42,224 @@ button{
 .app{
   width:100%;
   max-width:520px;
-  min-height:100vh;
   margin:0 auto;
-  padding:
-    calc(18px + env(safe-area-inset-top))
-    20px
-    calc(46px + env(safe-area-inset-bottom));
-}
-
-.hidden{
-  display:none!important;
+  min-height:100vh;
+  padding:24px 20px 44px;
 }
 
 /* =========================
    TOP
 ========================= */
 
+.brand{
+  text-align:center;
+  font-size:14px;
+  font-weight:800;
+  margin:2px 0 18px;
+}
+
 .hero{
   display:block;
   width:100%;
   height:auto;
-  max-height:320px;
+  max-height:330px;
   object-fit:cover;
-  object-position:center;
-  border-radius:0 0 28px 28px;
-  margin:0 auto 20px;
-  box-shadow:
-    0 18px 42px rgba(180,100,120,.10);
+  border-radius:28px;
+  box-shadow:0 14px 38px rgba(147,81,99,.10);
+  margin-bottom:26px;
 }
 
-.brand{
-  text-align:center;
-  margin:0 0 8px;
-  font-size:14px;
-  font-weight:900;
-  letter-spacing:.04em;
-}
-
-.heroTitle{
+h1{
   margin:0;
   text-align:center;
-  color:var(--pink-dark);
-  font-size:39px;
-  line-height:1.22;
+  color:var(--pink);
+  font-size:36px;
+  line-height:1.25;
+  letter-spacing:-1.5px;
   font-weight:900;
-  letter-spacing:-1.8px;
 }
 
-.heroLead{
-  margin:18px 0 28px;
+.lead{
+  margin:22px auto 28px;
   text-align:center;
-  color:#302b2d;
   font-size:16px;
   line-height:1.9;
   font-weight:500;
 }
 
-.heroLead strong{
-  font-weight:800;
-}
+/* 3段カード */
 
-/* =========================
-   8 QUESTIONS CARD
-========================= */
-
-.guideCard{
+.introCard{
+  position:relative;
   overflow:hidden;
-  margin:0 0 24px;
-  padding:23px 20px 8px;
+  background:rgba(255,255,255,.94);
   border:1px solid var(--line);
-  border-radius:29px;
-  background:
-    linear-gradient(145deg,#fff 0%,#fffafb 100%);
-  box-shadow:
-    0 18px 45px rgba(103,65,76,.07);
+  border-radius:28px;
+  padding:25px 22px 12px;
+  box-shadow:0 15px 40px rgba(103,61,73,.07);
 }
 
-.guideEyebrow{
+.introLabel{
   display:flex;
   align-items:center;
-  gap:10px;
-  margin:0 0 13px;
-  color:#f07791;
-  font-size:11px;
+  gap:12px;
+  color:#ef6f89;
+  font-size:12px;
   font-weight:900;
   letter-spacing:.22em;
 }
 
-.guideEyebrow::after{
+.introLabel::after{
   content:"";
-  flex:1;
   height:1px;
-  background:#f0bdca;
+  background:#f0cbd4;
+  flex:1;
 }
 
-.guideTitle{
-  margin:0;
+.introTitle{
   font-size:24px;
   line-height:1.4;
   font-weight:900;
-  letter-spacing:-.5px;
+  margin:13px 0 5px;
 }
 
-.guideDescription{
-  margin:5px 0 13px;
-  color:#83797d;
+.introSub{
+  color:var(--muted);
   font-size:13px;
-  line-height:1.7;
+  line-height:1.75;
+  margin-bottom:14px;
 }
 
-/* 3段 */
-
-.guideRow{
+.feature{
   display:grid;
-  grid-template-columns:56px 1fr 58px;
-  gap:12px;
+  grid-template-columns:54px 1fr 50px;
+  gap:14px;
   align-items:center;
-  min-height:118px;
-  padding:15px 0;
-  border-top:1px solid #f4e5e9;
+  padding:19px 0;
+  border-top:1px solid #f4e6e9;
 }
 
-.guideRow:first-of-type{
-  border-top:0;
-}
-
-.numberBubble{
+.featureNo{
   width:52px;
   height:52px;
   display:flex;
   align-items:center;
   justify-content:center;
   border-radius:50%;
-  background:
-    linear-gradient(145deg,#fff1f4,#ffe8ee);
-  color:var(--pink-dark);
+  background:#fff0f3;
+  color:var(--pink);
   font-size:17px;
   font-weight:900;
 }
 
-.guideCopy{
-  min-width:0;
-}
-
-.guideRowTitle{
-  margin-bottom:5px;
+.featureTitle{
   font-size:17px;
   line-height:1.45;
   font-weight:900;
+  margin-bottom:4px;
 }
 
-.guideRowText{
-  color:#7d7478;
-  font-size:12.5px;
+.featureText{
+  color:var(--muted);
+  font-size:12px;
   line-height:1.65;
 }
 
-/* 右側の小イラスト */
-
-.miniArt{
-  position:relative;
-  width:58px;
-  height:58px;
+.featureIcon{
+  width:48px;
+  height:48px;
   display:flex;
   align-items:center;
   justify-content:center;
   border-radius:50%;
-  background:#fff3f6;
+  background:#fff3f5;
+  font-size:25px;
 }
 
-.miniArt svg{
-  width:44px;
-  height:44px;
-  overflow:visible;
+.startBtn{
+  margin-top:24px;
 }
-
-.miniArt svg *{
-  stroke:#7d676d;
-  stroke-width:1.7;
-  stroke-linecap:round;
-  stroke-linejoin:round;
-}
-
-.miniArt .pinkFill{
-  fill:#ff7f99;
-  stroke:none;
-}
-
-.miniArt .softFill{
-  fill:#fff;
-}
-
-.miniArt .none{
-  fill:none;
-}
-
-/* =========================
-   BUTTON
-========================= */
 
 .btn{
   width:100%;
-  min-height:61px;
   border:0;
   border-radius:999px;
-  padding:17px 18px;
-  background:
-    linear-gradient(135deg,#ff718b,#ff5878);
+  padding:18px 16px;
+  min-height:60px;
+  background:var(--pink);
   color:#fff;
-  font-size:18px;
+  font-size:17px;
   font-weight:900;
-  letter-spacing:.02em;
-  box-shadow:
-    0 13px 28px rgba(255,95,128,.25);
-  -webkit-tap-highlight-color:transparent;
-}
-
-.btn:active{
-  transform:scale(.985);
+  box-shadow:0 12px 26px rgba(255,95,125,.24);
 }
 
 .btn.secondary{
   background:#fff;
-  color:#746b6f;
+  color:#c74f67;
   border:1px solid var(--line);
   box-shadow:none;
 }
 
 .note{
-  margin:16px 2px 0;
-  color:#8a8185;
+  color:var(--muted);
   font-size:11px;
   line-height:1.75;
+  margin-top:16px;
 }
 
 /* =========================
    QUIZ
 ========================= */
 
-#quiz{
-  padding-top:7px;
+.hidden{
+  display:none!important;
 }
 
-.quizTop,
-.resultTop{
+.top{
   display:flex;
-  align-items:center;
   justify-content:space-between;
-  gap:10px;
-  margin-bottom:13px;
-  font-size:14px;
-  font-weight:900;
-}
-
-.quizTop span:last-child,
-.resultTop span:last-child{
-  color:var(--pink-dark);
+  align-items:center;
+  font-size:13px;
+  font-weight:800;
+  margin-bottom:12px;
 }
 
 .progress{
-  height:8px;
+  width:100%;
+  height:7px;
+  border-radius:99px;
   overflow:hidden;
-  margin-bottom:27px;
-  border-radius:999px;
-  background:#f8e5ea;
+  background:#f7e3e8;
+  margin-bottom:30px;
 }
 
 .progress > div{
   height:100%;
-  width:0;
-  border-radius:999px;
-  background:
-    linear-gradient(90deg,#ff91a6,#ff6682);
+  background:var(--pink);
   transition:width .25s ease;
 }
 
 .quizCard{
-  padding:27px 20px 21px;
-  border:1px solid var(--line);
-  border-radius:29px;
   background:#fff;
-  box-shadow:
-    0 15px 40px rgba(92,56,67,.07);
+  border:1px solid var(--line);
+  border-radius:28px;
+  padding:25px 20px;
+  box-shadow:0 14px 38px rgba(103,61,73,.07);
 }
 
 .qno{
-  margin-bottom:11px;
-  color:var(--pink-dark);
-  font-size:12px;
+  color:var(--pink);
+  font-size:13px;
   font-weight:900;
-  letter-spacing:.15em;
+  letter-spacing:.12em;
+  margin-bottom:10px;
 }
 
 .question{
-  margin-bottom:24px;
   font-size:21px;
   line-height:1.65;
   font-weight:900;
+  margin-bottom:24px;
 }
 
 .options{
@@ -353,182 +268,102 @@ button{
 }
 
 .option{
-  position:relative;
   width:100%;
-  min-height:60px;
-  padding:16px 17px;
-  border:1.5px solid #f0dce2;
-  border-radius:19px;
+  border:1.5px solid #f0dce1;
+  border-radius:18px;
   background:#fff;
-  color:#373134;
-  text-align:left;
+  padding:16px 17px;
+  color:var(--ink);
   font-size:15px;
   line-height:1.55;
-  box-shadow:
-    0 5px 15px rgba(80,50,60,.035);
-  -webkit-tap-highlight-color:transparent;
+  text-align:left;
 }
 
 .option.selected{
-  padding-left:48px;
-  border-color:#ff8ea3;
-  background:
-    linear-gradient(135deg,#fff0f4,#fff9fa);
-  color:#c94360;
+  border-color:var(--pink);
+  background:#fff2f5;
+  color:#c9435d;
   font-weight:800;
-}
-
-.option.selected::before{
-  content:"✓";
-  position:absolute;
-  left:17px;
-  top:50%;
-  width:22px;
-  height:22px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  transform:translateY(-50%);
-  border-radius:50%;
-  background:var(--pink);
-  color:#fff;
-  font-size:12px;
-  font-weight:900;
 }
 
 .nav{
   display:grid;
-  grid-template-columns:.85fr 1.4fr;
-  gap:11px;
+  grid-template-columns:1fr 1.5fr;
+  gap:10px;
   margin-top:20px;
-}
-
-.nav .btn{
-  min-height:56px;
-  font-size:15px;
 }
 
 /* =========================
    DONE
 ========================= */
 
-#done{
-  padding-top:46px;
+.done{
   text-align:center;
+  padding-top:70px;
 }
 
-.doneIcon{
-  width:88px;
-  height:88px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  margin:0 auto 20px;
-  border-radius:50%;
-  background:
-    linear-gradient(145deg,#fff0f4,#fff9fa);
-  font-size:44px;
-  box-shadow:
-    0 13px 32px rgba(255,102,128,.13);
-}
-
-.doneSmall{
-  margin-bottom:10px;
-  color:var(--pink-dark);
-  font-size:11px;
-  font-weight:900;
-  letter-spacing:.19em;
+.doneEmoji{
+  font-size:52px;
+  margin-bottom:16px;
 }
 
 .doneTitle{
-  margin:0 0 16px;
-  font-size:29px;
-  line-height:1.5;
+  font-size:27px;
+  line-height:1.55;
   font-weight:900;
-}
-
-.doneText{
-  margin:0 0 28px;
-  color:#6f666a;
-  font-size:15px;
-  line-height:1.9;
+  margin-bottom:16px;
 }
 
 /* =========================
    RESULT
 ========================= */
 
-#result{
-  padding-top:6px;
-}
-
 .resultHero{
-  position:relative;
-  overflow:hidden;
-  margin:10px 0 28px;
-  padding:30px 20px 27px;
-  border:1px solid #f1d5dd;
-  border-radius:30px;
-  background:
-    radial-gradient(circle at 15% 5%,#fff 0,transparent 35%),
-    linear-gradient(145deg,#fff0f4,#fff9fa);
   text-align:center;
-  box-shadow:
-    0 16px 42px rgba(177,91,111,.09);
+  background:linear-gradient(145deg,#fff0f3,#fff8fa);
+  border:1px solid #f4d8df;
+  border-radius:28px;
+  padding:27px 18px;
+  box-shadow:0 12px 34px rgba(103,61,73,.06);
+  margin:16px 0 28px;
 }
 
 .resultEmoji{
-  margin-bottom:7px;
-  font-size:48px;
+  font-size:50px;
+  margin-bottom:8px;
 }
 
 .resultTitle{
-  margin-bottom:10px;
   font-size:23px;
-  line-height:1.5;
   font-weight:900;
+  line-height:1.5;
+  margin-bottom:8px;
 }
 
 .resultSub{
-  color:#675f62;
+  color:#665e61;
   font-size:14px;
-  line-height:1.8;
+  line-height:1.75;
 }
 
 .sectionTitle{
-  display:flex;
-  align-items:center;
-  gap:9px;
-  margin:28px 3px 12px;
-  color:#df5b77;
+  margin:27px 3px 10px;
+  color:#e75f7a;
   font-size:14px;
   font-weight:900;
+  letter-spacing:.04em;
 }
 
-.sectionTitle::before{
-  content:"";
-  width:4px;
-  height:19px;
-  border-radius:99px;
-  background:var(--pink);
-}
-
-.resultCard{
-  margin-bottom:17px;
-  padding:21px 19px;
-  border:1px solid var(--line);
-  border-radius:25px;
+.card{
   background:#fff;
-  color:#443d40;
-  font-size:15px;
-  line-height:1.9;
-  box-shadow:
-    0 11px 31px rgba(91,54,65,.055);
+  border:1px solid var(--line);
+  border-radius:24px;
+  padding:20px;
+  box-shadow:0 10px 30px rgba(103,61,73,.06);
 }
 
 .checkitem{
-  position:relative;
-  padding:13px 3px 13px 34px;
+  padding:11px 0;
   border-bottom:1px solid #f4e7ea;
   line-height:1.65;
 }
@@ -537,108 +372,68 @@ button{
   border-bottom:0;
 }
 
-.checkitem::before{
-  content:"✓";
-  position:absolute;
-  left:2px;
-  top:14px;
-  width:21px;
-  height:21px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  border-radius:50%;
-  background:var(--pink-soft);
-  color:var(--pink-dark);
-  font-size:11px;
-  font-weight:900;
-}
-
 .tip{
-  margin-bottom:17px;
-  padding:22px 19px;
-  border:1px solid #f0ccd6;
-  border-radius:25px;
-  background:
-    linear-gradient(145deg,#fff5f8,#fff);
-  color:#443d40;
-  font-size:15px;
+  background:linear-gradient(145deg,#fff7f9,#fff);
+  border:1px solid #f0ccd5;
+  border-radius:24px;
+  padding:20px;
+  line-height:1.85;
+  box-shadow:0 10px 30px rgba(103,61,73,.05);
+}
+
+.message{
   line-height:1.9;
-  box-shadow:
-    0 11px 31px rgba(91,54,65,.055);
 }
 
-.tip b{
-  color:#d64e6b;
-}
-
-.resultButtons{
-  margin-top:29px;
-}
-
-.resultButtons .btn + .btn{
-  margin-top:12px;
+.resultButton{
+  margin-top:18px;
 }
 
 /* =========================
-   SMALL PHONE
+   MOBILE
 ========================= */
 
 @media(max-width:390px){
 
   .app{
-    padding-left:17px;
-    padding-right:17px;
+    padding:22px 18px 40px;
   }
 
-  .heroTitle{
-    font-size:34px;
+  h1{
+    font-size:32px;
   }
 
-  .heroLead{
-    font-size:15px;
+  .introCard{
+    padding:23px 18px 10px;
   }
 
-  .guideCard{
-    padding-left:17px;
-    padding-right:17px;
-  }
-
-  .guideTitle{
+  .introTitle{
     font-size:22px;
   }
 
-  .guideRow{
-    grid-template-columns:50px 1fr 50px;
-    gap:9px;
+  .feature{
+    grid-template-columns:48px 1fr 42px;
+    gap:11px;
   }
 
-  .numberBubble{
-    width:47px;
-    height:47px;
+  .featureNo{
+    width:46px;
+    height:46px;
     font-size:15px;
   }
 
-  .miniArt{
-    width:50px;
-    height:50px;
+  .featureIcon{
+    width:42px;
+    height:42px;
+    font-size:22px;
   }
 
-  .miniArt svg{
-    width:38px;
-    height:38px;
-  }
-
-  .guideRowTitle{
-    font-size:15.5px;
-  }
-
-  .guideRowText{
-    font-size:11.5px;
+  .featureTitle{
+    font-size:16px;
   }
 
   .question{
-    font-size:19px;
+    font-size:20px;
   }
 }
 </style>
@@ -648,196 +443,110 @@ button{
 
 <main class="app">
 
-<!-- START -->
+<!-- ======================
+     START
+====================== -->
+
 <section id="start">
+
+  <div class="brand">あと1分。</div>
 
   <img
     class="hero"
     src="hero-girl.png"
-    alt="スマホを持ちながら恋愛について考える女性"
+    alt="スマホを持つ女性のイラスト"
   >
 
-  <div class="brand">
-    あと1分。
-  </div>
+  <h1>彼の気持ちチェック</h1>
 
-  <h1 class="heroTitle">
-    彼の気持ちチェック
-  </h1>
-
-  <p class="heroLead">
+  <p class="lead">
     LINE、誘い方、デートの約束。<br>
-    彼の<strong>「言葉」ではなく「行動」</strong>を<br>
+    彼の「言葉」ではなく「行動」を<br>
     一緒に見ていきましょう。
   </p>
 
+  <div class="introCard">
 
-  <div class="guideCard">
-
-    <div class="guideEyebrow">
+    <div class="introLabel">
       8 QUESTIONS
     </div>
 
-    <h2 class="guideTitle">
+    <div class="introTitle">
       8つの質問でわかること
-    </h2>
+    </div>
 
-    <p class="guideDescription">
+    <div class="introSub">
       今の彼との状況を整理して、次に見るべきポイントを確認できます。
-    </p>
+    </div>
 
 
-    <!-- 01 -->
-    <div class="guideRow">
+    <div class="feature">
 
-      <div class="numberBubble">
+      <div class="featureNo">
         01
       </div>
 
-      <div class="guideCopy">
-
-        <div class="guideRowTitle">
+      <div>
+        <div class="featureTitle">
           今の彼の行動
         </div>
 
-        <div class="guideRowText">
+        <div class="featureText">
           脈ありにつながる行動が、<br>
           今どれくらい確認できているか。
         </div>
-
       </div>
 
-      <div class="miniArt">
-
-        <svg viewBox="0 0 48 48" aria-hidden="true">
-          <rect class="softFill" x="10" y="8" width="28" height="25" rx="7"></rect>
-          <path class="softFill" d="M17 32 L14 40 L23 34"></path>
-          <circle class="pinkFill" cx="19" cy="21" r="2"></circle>
-          <circle class="pinkFill" cx="24" cy="21" r="2"></circle>
-          <circle class="pinkFill" cx="29" cy="21" r="2"></circle>
-        </svg>
-
+      <div class="featureIcon">
+        💬
       </div>
 
     </div>
 
 
-    <!-- 02 -->
-    <div class="guideRow">
+    <div class="feature">
 
-      <div class="numberBubble">
+      <div class="featureNo">
         02
       </div>
 
-      <div class="guideCopy">
-
-        <div class="guideRowTitle">
+      <div>
+        <div class="featureTitle">
           これから見るポイント
         </div>
 
-        <div class="guideRowText">
+        <div class="featureText">
           LINE・誘い・デートで、<br>
           次に注目したい彼の行動。
         </div>
-
       </div>
 
-      <div class="miniArt">
-
-        <svg viewBox="0 0 48 48" aria-hidden="true">
-
-          <rect
-            class="softFill"
-            x="9"
-            y="11"
-            width="30"
-            height="28"
-            rx="4">
-          </rect>
-
-          <path
-            class="none"
-            d="M9 18H39">
-          </path>
-
-          <path
-            class="none"
-            d="M16 7V15 M32 7V15">
-          </path>
-
-          <path
-            class="pinkFill"
-            d="M24 31
-               C19 27 17 24 19 21
-               C21 19 23 20 24 22
-               C25 20 28 19 30 21
-               C32 24 29 27 24 31Z">
-          </path>
-
-        </svg>
-
+      <div class="featureIcon">
+        🗓️
       </div>
 
     </div>
 
 
-    <!-- 03 -->
-    <div class="guideRow">
+    <div class="feature">
 
-      <div class="numberBubble">
+      <div class="featureNo">
         03
       </div>
 
-      <div class="guideCopy">
-
-        <div class="guideRowTitle">
+      <div>
+        <div class="featureTitle">
           今のあなたにやってほしいこと
         </div>
 
-        <div class="guideRowText">
+        <div class="featureText">
           今の二人の状況に合わせて、<br>
           次にどうすればいいかを提案。
         </div>
-
       </div>
 
-      <div class="miniArt">
-
-        <svg viewBox="0 0 48 48" aria-hidden="true">
-
-          <path
-            class="softFill"
-            d="M24 7
-               C16 7 11 13 11 20
-               C11 25 14 28 17 31
-               C19 33 19 36 19 38
-               H29
-               C29 35 29 33 31 31
-               C35 28 37 24 37 20
-               C37 13 32 7 24 7Z">
-          </path>
-
-          <path
-            class="none"
-            d="M20 42H28 M21 38H27">
-          </path>
-
-          <path
-            class="pinkFill"
-            d="M24 28
-               C20 25 19 22 21 20
-               C22 19 24 20 24 21
-               C25 20 27 19 28 20
-               C30 22 28 25 24 28Z">
-          </path>
-
-          <path
-            class="none"
-            d="M24 2V5 M8 9L11 12 M40 9L37 12">
-          </path>
-
-        </svg>
-
+      <div class="featureIcon">
+        💡
       </div>
 
     </div>
@@ -846,11 +555,12 @@ button{
 
 
   <button
-    class="btn"
+    class="btn startBtn"
     onclick="startCheck()"
   >
     チェックを始める →
   </button>
+
 
   <div class="note">
     ※回答はこの端末内に保存されます。名前やメールアドレスの入力は必要ありません。
@@ -859,17 +569,15 @@ button{
 </section>
 
 
-<!-- QUIZ -->
+<!-- ======================
+     QUIZ
+====================== -->
+
 <section id="quiz" class="hidden">
 
-  <div class="quizTop">
-
-    <span>
-      彼の気持ちチェック
-    </span>
-
+  <div class="top">
+    <span>彼の気持ちチェック</span>
     <span id="count"></span>
-
   </div>
 
   <div class="progress">
@@ -880,34 +588,35 @@ button{
 
     <div
       class="qno"
-      id="qno">
-    </div>
+      id="qno"
+    ></div>
 
     <div
       class="question"
-      id="question">
-    </div>
+      id="question"
+    ></div>
 
     <div
       class="options"
-      id="options">
-    </div>
+      id="options"
+    ></div>
 
   </div>
-
 
   <div class="nav">
 
     <button
       class="btn secondary"
-      onclick="back()">
+      onclick="back()"
+    >
       ← 戻る
     </button>
 
     <button
       class="btn"
       id="next"
-      onclick="next()">
+      onclick="next()"
+    >
       次へ →
     </button>
 
@@ -916,50 +625,46 @@ button{
 </section>
 
 
-<!-- DONE -->
-<section id="done" class="hidden">
+<!-- ======================
+     DONE
+====================== -->
 
-  <div class="doneIcon">
+<section id="done" class="hidden done">
+
+  <div class="doneEmoji">
     💗
   </div>
 
-  <div class="doneSmall">
-    CHECK COMPLETE
+  <div class="doneTitle">
+    8問すべて<br>
+    回答できました<br>
+    お疲れさまでした！
   </div>
 
-  <h2 class="doneTitle">
-    8問すべて<br>
-    回答できました
-  </h2>
-
-  <p class="doneText">
-    お疲れさまでした☺️<br>
+  <p class="lead">
     今の彼の行動をもとに、<br>
-    彼の気持ちを一緒に確認してみましょう。
+    一緒に彼の気持ちを確認してみましょう。
   </p>
 
   <button
     class="btn"
-    onclick="showResult()">
-    彼の気持ちを確認する ♡
+    onclick="showResult()"
+  >
+    彼の気持ちを確認する♡
   </button>
 
 </section>
 
 
-<!-- RESULT -->
+<!-- ======================
+     RESULT
+====================== -->
+
 <section id="result" class="hidden">
 
-  <div class="resultTop">
-
-    <span>
-      彼の気持ちチェック
-    </span>
-
-    <span>
-      RESULT
-    </span>
-
+  <div class="top">
+    <span>彼の気持ちチェック</span>
+    <span>結果</span>
   </div>
 
 
@@ -967,50 +672,50 @@ button{
 
     <div
       class="resultEmoji"
-      id="rEmoji">
-    </div>
+      id="rEmoji"
+    ></div>
 
     <div
       class="resultTitle"
-      id="rTitle">
-    </div>
+      id="rTitle"
+    ></div>
 
     <div
       class="resultSub"
-      id="rSub">
-    </div>
+      id="rSub"
+    ></div>
 
   </div>
 
 
   <div class="sectionTitle">
-    今回確認できた彼の行動
+    01　今回確認できた彼の行動
   </div>
 
   <div
-    class="resultCard"
-    id="confirmed">
-  </div>
+    class="card"
+    id="confirmed"
+  ></div>
 
 
   <div class="sectionTitle">
-    これから見ていくポイント
+    02　これから見ていくポイント
   </div>
 
   <div
-    class="resultCard"
-    id="watch">
-  </div>
+    class="card message"
+    id="watch"
+  ></div>
 
 
   <div class="sectionTitle">
-    今のあなたにやってほしいこと
+    03　今のあなたにやってほしいこと
   </div>
 
   <div
     class="tip"
-    id="advice">
-  </div>
+    id="advice"
+  ></div>
 
 
   <div class="sectionTitle">
@@ -1018,26 +723,25 @@ button{
   </div>
 
   <div
-    class="resultCard"
-    id="message">
-  </div>
+    class="card message"
+    id="message"
+  ></div>
 
 
-  <div class="resultButtons">
+  <button
+    class="btn resultButton"
+    onclick="restart()"
+  >
+    もう一度チェックする →
+  </button>
 
-    <button
-      class="btn"
-      onclick="restart()">
-      もう一度チェックする →
-    </button>
 
-    <button
-      class="btn secondary"
-      onclick="resetAll()">
-      すべての回答をリセット
-    </button>
-
-  </div>
+  <button
+    class="btn secondary resultButton"
+    onclick="resetAll()"
+  >
+    すべての回答をリセット
+  </button>
 
 </section>
 
@@ -1046,7 +750,7 @@ button{
 
 <script>
 
-const qs = [
+const qs=[
 
   {
     q:"彼からLINEしてくれることがありますか？",
@@ -1107,61 +811,58 @@ const qs = [
 ];
 
 
-let answers =
+let answers=
   JSON.parse(
     localStorage.getItem("kimochiAnswers") || "[]"
   );
 
-let i = 0;
+let i=0;
 
-const $ = id =>
+
+const $=id=>
   document.getElementById(id);
 
 
 function screen(id){
 
   ["start","quiz","done","result"]
-    .forEach(name => {
-
-      $(name).classList.toggle(
-        "hidden",
-        name !== id
-      );
-
-    });
+  .forEach(x=>
+    $(x).classList.toggle(
+      "hidden",
+      x!==id
+    )
+  );
 
   window.scrollTo(0,0);
-
 }
 
 
 function startCheck(){
 
-  i = 0;
+  i=0;
 
   screen("quiz");
 
   render();
-
 }
 
 
 function render(){
 
-  $("count").textContent =
-    `${i + 1} / 8`;
+  $("count").textContent=
+    `${i+1} / 8`;
 
-  $("bar").style.width =
-    `${((i + 1) / 8) * 100}%`;
+  $("bar").style.width=
+    `${((i+1)/8)*100}%`;
 
-  $("qno").textContent =
-    `QUESTION ${i + 1}`;
+  $("qno").textContent=
+    `QUESTION ${String(i+1).padStart(2,"0")}`;
 
-  $("question").textContent =
+  $("question").textContent=
     qs[i].q;
 
 
-  const options = [
+  const opts=[
 
     ["yes","はい"],
 
@@ -1172,35 +873,31 @@ function render(){
   ];
 
 
-  $("options").innerHTML =
-    options.map(([value,text]) => {
+  $("options").innerHTML=
+    opts.map(([v,t])=>
 
-      const selected =
-        answers[i] === value;
+      `<button
+        class="option ${answers[i]===v ? "selected" : ""}"
+        onclick="choose('${v}')">
 
-      return `
-        <button
-          class="option ${selected ? "selected" : ""}"
-          onclick="choose('${value}')"
-        >
-          ${text}
-        </button>
-      `;
+        ${answers[i]===v ? "✓ " : ""}
+        ${t}
 
-    }).join("");
+      </button>`
+
+    ).join("");
 
 
-  $("next").textContent =
-    i === 7
+  $("next").textContent=
+    i===7
       ? "回答を完了する →"
       : "次へ →";
-
 }
 
 
-function choose(value){
+function choose(v){
 
-  answers[i] = value;
+  answers[i]=v;
 
   localStorage.setItem(
     "kimochiAnswers",
@@ -1208,7 +905,6 @@ function choose(value){
   );
 
   render();
-
 }
 
 
@@ -1217,15 +913,14 @@ function next(){
   if(!answers[i]){
 
     alert(
-      "回答を1つ選んでください☺️"
+      "回答を1つ選んでください"
     );
 
     return;
-
   }
 
 
-  if(i < 7){
+  if(i<7){
 
     i++;
 
@@ -1244,7 +939,7 @@ function next(){
 
 function back(){
 
-  if(i === 0){
+  if(i===0){
 
     screen("start");
 
@@ -1261,32 +956,34 @@ function back(){
 }
 
 
+/* =========================
+   判定
+========================= */
+
 function resultData(){
 
-  const valid =
+  const valid=
     answers.filter(
-      value =>
-        value === "yes" ||
-        value === "no"
+      x=>x==="yes" || x==="no"
     ).length;
 
 
-  const yes =
+  const yes=
     answers.filter(
-      value =>
-        value === "yes"
+      x=>x==="yes"
     ).length;
 
 
-  const types =
+  const types=
     new Set(
 
       qs.map(
-        (question,index) =>
-          answers[index] === "yes"
-            ? question.type
+        (q,j)=>
+          answers[j]==="yes"
+            ? q.type
             : null
-      ).filter(Boolean)
+      )
+      .filter(Boolean)
 
     );
 
@@ -1294,206 +991,271 @@ function resultData(){
   let level;
 
 
+  /*
+   💗
+   Q5・Q6両方YES
+   ＋
+   有効回答70%以上YES
+  */
+
   if(
-    answers[4] === "yes" &&
-    answers[5] === "yes" &&
-    valid > 0 &&
-    yes / valid >= .7
+
+    answers[4]==="yes" &&
+
+    answers[5]==="yes" &&
+
+    valid>0 &&
+
+    yes/valid>=0.7
+
   ){
 
-    level = "heart";
+    level="heart";
 
   }
+
+
+  /*
+   🌷
+   有効回答50%以上YES
+   ＋
+   A/B/Cの2種類以上
+  */
 
   else if(
-    valid > 0 &&
-    yes / valid >= .5 &&
-    types.size >= 2
+
+    valid>0 &&
+
+    yes/valid>=0.5 &&
+
+    types.size>=2
+
   ){
 
-    level = "flower";
+    level="flower";
 
   }
 
-  else if(
-    yes >= 1
-  ){
 
-    level = "sprout";
+  /*
+   🌱
+   YESが1つ以上
+  */
+
+  else if(yes>=1){
+
+    level="sprout";
 
   }
+
+
+  /*
+   🔍
+   それ以外
+  */
 
   else{
 
-    level = "search";
+    level="search";
 
   }
 
 
-  return {
+  return{
     level,
     yes,
     valid
   };
-
 }
 
 
+/* =========================
+   RESULT
+========================= */
+
 function showResult(){
 
-  const result =
+  const r=
     resultData();
 
 
-  const map = {
+  const map={
 
     heart:[
+
       "💗",
+
       "かなり脈ありの可能性があります！",
+
       "彼はあなたに興味を持つだけでなく、実際に会おうとする行動まで出ています。"
+
     ],
+
 
     flower:[
+
       "🌷",
+
       "興味はありそうです",
-      "彼の行動の中に、あなたへの興味を感じるサインがいくつか出ています♡"
+
+      "彼の行動から、あなたへの興味を感じるサインがいくつか確認できています。"
+
     ],
+
 
     sprout:[
+
       "🌱",
+
       "脈ありサインが少しずつ出ています",
+
       "今確認できているサインを大切にしながら、もう少し彼の行動を見ていきましょう。"
+
     ],
 
+
     search:[
+
       "🔍",
+
       "まだ気持ちを見極める段階です",
+
       "今は判断材料が少ないだけ。これからの彼の行動を見ていきましょう。"
+
     ]
 
   };
 
 
-  const data =
-    map[result.level];
+  const m=
+    map[r.level];
 
 
-  $("rEmoji").textContent =
-    data[0];
+  $("rEmoji").textContent=
+    m[0];
 
-  $("rTitle").textContent =
-    data[1];
+  $("rTitle").textContent=
+    m[1];
 
-  $("rSub").textContent =
-    data[2];
+  $("rSub").textContent=
+    m[2];
 
 
-  const yesItems =
+  const yesItems=
+
     qs.map(
-      (question,index) =>
-        answers[index] === "yes"
-          ? question.yes
+      (q,j)=>
+        answers[j]==="yes"
+          ? q.yes
           : null
-    ).filter(Boolean);
+    )
+
+    .filter(Boolean);
 
 
-  if(yesItems.length){
+  $("confirmed").innerHTML=
 
-    $("confirmed").innerHTML =
-      yesItems.map(
-        item =>
-          `<div class="checkitem">${item}</div>`
-      ).join("");
+    yesItems.length
+
+    ? yesItems.map(
+        x=>
+          `<div class="checkitem">
+             ✓ ${x}
+           </div>`
+      ).join("")
+
+    : `<div>
+         今のところ、はっきり確認できた行動はまだありません。
+       </div>`;
+
+
+  if(
+    answers[4]!=="yes" ||
+    answers[5]!=="yes"
+  ){
+
+    $("watch").textContent=
+
+      "次は、彼から「会おう」という行動が出てくるか、そして会う話になったときに具体的な日にちを決めようとしてくれるかを見ていきましょう。";
 
   }else{
 
-    $("confirmed").textContent =
-      "今のところ、はっきり確認できた行動はまだありません。";
+    $("watch").textContent=
+
+      "会う約束だけでなく、実際に会ったときのあなたへの接し方や、その後も次の予定につながっていくかを見ていきましょう。";
 
   }
 
 
   if(
-    answers[4] !== "yes" ||
-    answers[5] !== "yes"
+    answers[4]!=="yes"
   ){
 
-    $("watch").textContent =
-      "次は、彼から「会おう」という行動や、具体的に予定を決めようとする行動が出てくるかを見ていきましょう。";
+    $("advice").innerHTML=
 
-  }else{
-
-    $("watch").textContent =
-      "会う約束だけでなく、実際に会ったときの扱いや、その後も次の予定につながっていくかを見ていきましょう。";
-
-  }
-
-
-  if(
-    answers[4] !== "yes"
-  ){
-
-    $("advice").innerHTML = `
-      <b>
+      `<b>
         行ってみたい場所の話題を一つ出してみましょう。
-      </b>
+       </b>
 
-      <br><br>
+       <br><br>
 
-      「このお店、前から気になってるんよね」
-      くらいで大丈夫。
+       「このお店、前から気になってるんよね」
+       くらいで大丈夫。
 
-      <br><br>
+       <br><br>
 
-      すぐにあなたから誘わず、
-      その話題から彼が会う方向に進めてくれるか見てみましょう。
-    `;
+       すぐにあなたから誘わず、
+       その話題から彼が会う方向に
+       進めてくれるか見てみましょう。`;
 
   }else{
 
-    $("advice").innerHTML = `
-      <b>
-        今出ている彼の行動を、そのまま見ていきましょう。
-      </b>
+    $("advice").innerHTML=
 
-      <br><br>
+      `<b>
+        今出ている彼の行動を、
+        そのまま見ていきましょう。
+       </b>
 
-      答えを急いで聞くより、
-      約束を守る・会う時間を作る・次の予定を決めるなど、
-      これからも行動が続くかを確認してみてください。
-    `;
+       <br><br>
+
+       答えを急いで聞くより、
+       約束を守る・会う時間を作る・
+       次の予定を決めるなど、
+       これからも彼の行動が続くかを
+       確認してみてください。`;
 
   }
 
 
   if(
-    result.level === "search"
+    r.level==="search"
   ){
 
-    $("message").textContent =
-      "今は「脈なし」と決める必要はありません。まだ確認できていない項目はマイナスではなく、これから見られる判断材料です。";
+    $("message").textContent=
+
+      "今は「脈なし」と決める必要はありません。「該当なし・まだその状況になっていない」と答えた項目はマイナスではなく、これから確認していく判断材料です。";
 
   }else{
 
-    $("message").textContent =
+    $("message").textContent=
+
       "彼からの行動に、あなたへの興味を感じるサインが出ていますね☺️ 今出ているサインを大切にしながら、ここからも彼の行動を一つずつ確認していきましょう。";
 
   }
 
 
   screen("result");
-
 }
 
 
 function restart(){
 
-  i = 0;
+  i=0;
 
   screen("quiz");
 
   render();
-
 }
 
 
@@ -1505,7 +1267,7 @@ function resetAll(){
     )
   ){
 
-    answers = [];
+    answers=[];
 
     localStorage.removeItem(
       "kimochiAnswers"
@@ -1522,9 +1284,8 @@ if(
   "serviceWorker" in navigator
 ){
 
-  navigator.serviceWorker.register(
-    "./sw.js"
-  );
+  navigator.serviceWorker
+    .register("./sw.js");
 
 }
 
