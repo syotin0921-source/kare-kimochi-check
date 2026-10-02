@@ -22,9 +22,7 @@
   -webkit-tap-highlight-color:transparent;
 }
 
-html{
-  scroll-behavior:smooth;
-}
+html{scroll-behavior:smooth}
 
 body{
   margin:0;
@@ -35,9 +33,7 @@ body{
               "Yu Gothic","YuGothic",sans-serif;
 }
 
-button{
-  font-family:inherit;
-}
+button{font-family:inherit}
 
 .app{
   width:100%;
@@ -46,10 +42,6 @@ button{
   min-height:100vh;
   padding:24px 20px 44px;
 }
-
-/* =========================
-   TOP
-========================= */
 
 .brand{
   text-align:center;
@@ -86,8 +78,6 @@ h1{
   line-height:1.9;
   font-weight:500;
 }
-
-/* 3段カード */
 
 .introCard{
   position:relative;
@@ -176,9 +166,7 @@ h1{
   font-size:25px;
 }
 
-.startBtn{
-  margin-top:24px;
-}
+.startBtn{margin-top:24px}
 
 .btn{
   width:100%;
@@ -207,13 +195,7 @@ h1{
   margin-top:16px;
 }
 
-/* =========================
-   QUIZ
-========================= */
-
-.hidden{
-  display:none!important;
-}
+.hidden{display:none!important}
 
 .top{
   display:flex;
@@ -233,7 +215,7 @@ h1{
   margin-bottom:30px;
 }
 
-.progress > div{
+.progress>div{
   height:100%;
   background:var(--pink);
   transition:width .25s ease;
@@ -293,10 +275,6 @@ h1{
   margin-top:20px;
 }
 
-/* =========================
-   DONE
-========================= */
-
 .done{
   text-align:center;
   padding-top:70px;
@@ -313,10 +291,6 @@ h1{
   font-weight:900;
   margin-bottom:16px;
 }
-
-/* =========================
-   RESULT
-========================= */
 
 .resultHero{
   text-align:center;
@@ -368,9 +342,7 @@ h1{
   line-height:1.65;
 }
 
-.checkitem:last-child{
-  border-bottom:0;
-}
+.checkitem:last-child{border-bottom:0}
 
 .tip{
   background:linear-gradient(145deg,#fff7f9,#fff);
@@ -381,60 +353,31 @@ h1{
   box-shadow:0 10px 30px rgba(103,61,73,.05);
 }
 
-.message{
-  line-height:1.9;
-}
+.message{line-height:1.9}
 
-.resultButton{
-  margin-top:18px;
-}
-
-/* =========================
-   MOBILE
-========================= */
+.resultButton{margin-top:18px}
 
 @media(max-width:390px){
-
-  .app{
-    padding:22px 18px 40px;
-  }
-
-  h1{
-    font-size:32px;
-  }
-
-  .introCard{
-    padding:23px 18px 10px;
-  }
-
-  .introTitle{
-    font-size:22px;
-  }
-
+  .app{padding:22px 18px 40px}
+  h1{font-size:32px}
+  .introCard{padding:23px 18px 10px}
+  .introTitle{font-size:22px}
   .feature{
     grid-template-columns:48px 1fr 42px;
     gap:11px;
   }
-
   .featureNo{
     width:46px;
     height:46px;
     font-size:15px;
   }
-
   .featureIcon{
     width:42px;
     height:42px;
     font-size:22px;
   }
-
-  .featureTitle{
-    font-size:16px;
-  }
-
-  .question{
-    font-size:20px;
-  }
+  .featureTitle{font-size:16px}
+  .question{font-size:20px}
 }
 </style>
 </head>
@@ -442,10 +385,6 @@ h1{
 <body>
 
 <main class="app">
-
-<!-- ======================
-     START
-====================== -->
 
 <section id="start">
 
@@ -467,9 +406,7 @@ h1{
 
   <div class="introCard">
 
-    <div class="introLabel">
-      8 QUESTIONS
-    </div>
+    <div class="introLabel">8 QUESTIONS</div>
 
     <div class="introTitle">
       8つの質問でわかること
@@ -479,80 +416,45 @@ h1{
       今の彼との状況を整理して、次に見るべきポイントを確認できます。
     </div>
 
-
     <div class="feature">
-
-      <div class="featureNo">
-        01
-      </div>
-
+      <div class="featureNo">01</div>
       <div>
-        <div class="featureTitle">
-          今の彼の行動
-        </div>
-
+        <div class="featureTitle">今の彼の行動</div>
         <div class="featureText">
           脈ありにつながる行動が、<br>
           今どれくらい確認できているか。
         </div>
       </div>
-
-      <div class="featureIcon">
-        💬
-      </div>
-
+      <div class="featureIcon">💬</div>
     </div>
 
-
     <div class="feature">
-
-      <div class="featureNo">
-        02
-      </div>
-
+      <div class="featureNo">02</div>
       <div>
-        <div class="featureTitle">
-          これから見るポイント
-        </div>
-
+        <div class="featureTitle">これから見るポイント</div>
         <div class="featureText">
           LINE・誘い・デートで、<br>
           次に注目したい彼の行動。
         </div>
       </div>
-
-      <div class="featureIcon">
-        🗓️
-      </div>
-
+      <div class="featureIcon">🗓️</div>
     </div>
 
-
     <div class="feature">
-
-      <div class="featureNo">
-        03
-      </div>
-
+      <div class="featureNo">03</div>
       <div>
         <div class="featureTitle">
           今のあなたにやってほしいこと
         </div>
-
         <div class="featureText">
           今の二人の状況に合わせて、<br>
           次にどうすればいいかを提案。
         </div>
       </div>
-
-      <div class="featureIcon">
-        💡
-      </div>
-
+      <div class="featureIcon">💡</div>
     </div>
 
   </div>
-
 
   <button
     class="btn startBtn"
@@ -561,17 +463,12 @@ h1{
     チェックを始める →
   </button>
 
-
   <div class="note">
     ※回答はこの端末内に保存されます。名前やメールアドレスの入力は必要ありません。
   </div>
 
 </section>
 
-
-<!-- ======================
-     QUIZ
-====================== -->
 
 <section id="quiz" class="hidden">
 
@@ -585,26 +482,12 @@ h1{
   </div>
 
   <div class="quizCard">
-
-    <div
-      class="qno"
-      id="qno"
-    ></div>
-
-    <div
-      class="question"
-      id="question"
-    ></div>
-
-    <div
-      class="options"
-      id="options"
-    ></div>
-
+    <div class="qno" id="qno"></div>
+    <div class="question" id="question"></div>
+    <div class="options" id="options"></div>
   </div>
 
   <div class="nav">
-
     <button
       class="btn secondary"
       onclick="back()"
@@ -619,21 +502,14 @@ h1{
     >
       次へ →
     </button>
-
   </div>
 
 </section>
 
 
-<!-- ======================
-     DONE
-====================== -->
-
 <section id="done" class="hidden done">
 
-  <div class="doneEmoji">
-    💗
-  </div>
+  <div class="doneEmoji">💗</div>
 
   <div class="doneTitle">
     8問すべて<br>
@@ -656,10 +532,6 @@ h1{
 </section>
 
 
-<!-- ======================
-     RESULT
-====================== -->
-
 <section id="result" class="hidden">
 
   <div class="top">
@@ -667,66 +539,31 @@ h1{
     <span>結果</span>
   </div>
 
-
   <div class="resultHero">
-
-    <div
-      class="resultEmoji"
-      id="rEmoji"
-    ></div>
-
-    <div
-      class="resultTitle"
-      id="rTitle"
-    ></div>
-
-    <div
-      class="resultSub"
-      id="rSub"
-    ></div>
-
+    <div class="resultEmoji" id="rEmoji"></div>
+    <div class="resultTitle" id="rTitle"></div>
+    <div class="resultSub" id="rSub"></div>
   </div>
-
 
   <div class="sectionTitle">
     01　今回確認できた彼の行動
   </div>
-
-  <div
-    class="card"
-    id="confirmed"
-  ></div>
-
+  <div class="card" id="confirmed"></div>
 
   <div class="sectionTitle">
     02　これから見ていくポイント
   </div>
-
-  <div
-    class="card message"
-    id="watch"
-  ></div>
-
+  <div class="card message" id="watch"></div>
 
   <div class="sectionTitle">
     03　今のあなたにやってほしいこと
   </div>
-
-  <div
-    class="tip"
-    id="advice"
-  ></div>
-
+  <div class="tip" id="advice"></div>
 
   <div class="sectionTitle">
     僕からあなたへ
   </div>
-
-  <div
-    class="card message"
-    id="message"
-  ></div>
-
+  <div class="card message" id="message"></div>
 
   <button
     class="btn resultButton"
@@ -734,7 +571,6 @@ h1{
   >
     もう一度チェックする →
   </button>
-
 
   <button
     class="btn secondary resultButton"
@@ -747,69 +583,57 @@ h1{
 
 </main>
 
-
 <script>
-
 const qs=[
-
   {
     q:"彼からLINEしてくれることがありますか？",
     na:"まだ判断できるほどLINEしていない",
     type:"A",
     yes:"彼からLINEしてくれる"
   },
-
   {
     q:"あなたからLINEを終わらせたあと、彼からまた連絡してくれることがありますか？",
     na:"まだその状況になっていない",
     type:"B",
     yes:"LINEが終わっても彼からまた連絡してくれる"
   },
-
   {
     q:"彼から、あなたについて質問してくれることがありますか？",
     na:"まだ判断できるほど話していない",
     type:"A",
     yes:"あなたについて質問してくれる"
   },
-
   {
     q:"前に話したことを覚えていたり、その話題をまた出してくれることがありますか？",
     na:"まだその状況になっていない",
     type:"B",
     yes:"前に話したことを覚えてくれている"
   },
-
   {
     q:"彼から「会おう」「ご飯行こう」など、会う誘いがありますか？",
     na:"まだその状況になっていない",
     type:"C",
     yes:"彼から会おうと誘ってくれる"
   },
-
   {
     q:"会う話になったとき、彼から具体的な日にちを決めようとしてくれますか？",
     na:"まだその状況になっていない",
     type:"C",
     yes:"具体的な日にちを決めようとしてくれる"
   },
-
   {
     q:"予定が合わなかったとき、彼から別の日を提案してくれますか？",
     na:"まだその状況になっていない",
     type:"C",
     yes:"予定が合わなくても別の日を提案してくれる"
   },
-
   {
     q:"会うことが決まったあと、お店や待ち合わせなどを彼も一緒に決めようとしてくれますか？",
     na:"まだその状況になっていない",
     type:"C",
     yes:"お店や待ち合わせを一緒に決めようとしてくれる"
   }
-
 ];
-
 
 let answers=
   JSON.parse(
@@ -818,39 +642,24 @@ let answers=
 
 let i=0;
 
-
-const $=id=>
-  document.getElementById(id);
-
+const $=id=>document.getElementById(id);
 
 function screen(id){
-
-  ["start","quiz","done","result"]
-  .forEach(x=>
-    $(x).classList.toggle(
-      "hidden",
-      x!==id
-    )
+  ["start","quiz","done","result"].forEach(
+    x=>$(x).classList.toggle("hidden",x!==id)
   );
-
   window.scrollTo(0,0);
 }
 
-
 function startCheck(){
-
   i=0;
-
   screen("quiz");
-
   render();
 }
 
-
 function render(){
 
-  $("count").textContent=
-    `${i+1} / 8`;
+  $("count").textContent=`${i+1} / 8`;
 
   $("bar").style.width=
     `${((i+1)/8)*100}%`;
@@ -858,45 +667,30 @@ function render(){
   $("qno").textContent=
     `QUESTION ${String(i+1).padStart(2,"0")}`;
 
-  $("question").textContent=
-    qs[i].q;
-
+  $("question").textContent=qs[i].q;
 
   const opts=[
-
     ["yes","はい"],
-
     ["no","いいえ"],
-
     ["na",qs[i].na]
-
   ];
-
 
   $("options").innerHTML=
     opts.map(([v,t])=>
-
       `<button
         class="option ${answers[i]===v ? "selected" : ""}"
         onclick="choose('${v}')">
-
-        ${answers[i]===v ? "✓ " : ""}
-        ${t}
-
+        ${answers[i]===v ? "✓ " : ""}${t}
       </button>`
-
     ).join("");
-
 
   $("next").textContent=
     i===7
-      ? "回答を完了する →"
-      : "次へ →";
+      ?"回答を完了する →"
+      :"次へ →";
 }
 
-
 function choose(v){
-
   answers[i]=v;
 
   localStorage.setItem(
@@ -907,57 +701,36 @@ function choose(v){
   render();
 }
 
-
 function next(){
 
   if(!answers[i]){
-
-    alert(
-      "回答を1つ選んでください"
-    );
-
+    alert("回答を1つ選んでください");
     return;
   }
 
-
   if(i<7){
-
     i++;
-
     render();
-
     window.scrollTo(0,0);
-
   }else{
-
     screen("done");
-
   }
-
 }
-
 
 function back(){
 
   if(i===0){
-
     screen("start");
-
   }else{
-
     i--;
-
     render();
-
     window.scrollTo(0,0);
-
   }
-
 }
 
 
 /* =========================
-   判定
+   4段階判定
 ========================= */
 
 function resultData(){
@@ -967,99 +740,47 @@ function resultData(){
       x=>x==="yes" || x==="no"
     ).length;
 
-
   const yes=
     answers.filter(
       x=>x==="yes"
     ).length;
 
-
   const types=
     new Set(
-
       qs.map(
         (q,j)=>
           answers[j]==="yes"
-            ? q.type
-            : null
-      )
-      .filter(Boolean)
-
+            ?q.type
+            :null
+      ).filter(Boolean)
     );
-
 
   let level;
 
-
-  /*
-   💗
-   Q5・Q6両方YES
-   ＋
-   有効回答70%以上YES
-  */
-
   if(
-
     answers[4]==="yes" &&
-
     answers[5]==="yes" &&
-
     valid>0 &&
-
     yes/valid>=0.7
-
   ){
-
     level="heart";
-
   }
-
-
-  /*
-   🌷
-   有効回答50%以上YES
-   ＋
-   A/B/Cの2種類以上
-  */
 
   else if(
-
     valid>0 &&
-
     yes/valid>=0.5 &&
-
     types.size>=2
-
   ){
-
     level="flower";
-
   }
-
-
-  /*
-   🌱
-   YESが1つ以上
-  */
 
   else if(yes>=1){
-
     level="sprout";
-
   }
-
-
-  /*
-   🔍
-   それ以外
-  */
 
   else{
-
     level="search";
-
   }
-
 
   return{
     level,
@@ -1070,191 +791,455 @@ function resultData(){
 
 
 /* =========================
-   RESULT
+   補助
+========================= */
+
+function countAnswer(value){
+  return answers.filter(
+    x=>x===value
+  ).length;
+}
+
+function p(...parts){
+  return parts.join("<br><br>");
+}
+
+
+/* =========================
+   文章分岐
+========================= */
+
+function getResultCopy(level){
+
+  const noCount=countAnswer("no");
+  const naCount=countAnswer("na");
+
+  const q5=answers[4];
+  const q6=answers[5];
+  const q7=answers[6];
+  const q8=answers[7];
+
+
+  /* =====================
+     💗
+  ===================== */
+
+  if(level==="heart"){
+
+    return{
+
+      watch:p(
+        `ここまで来たら、次に見てほしいのは<b>「会うまで」ではなく「会ってから」</b>です。`,
+        `実際に会ったとき、あなたとの時間を楽しもうとしてくれるか。`,
+        `そしてデートのあとも彼から連絡が来たり、次の予定につながったりするか。`,
+        `<b>一回会って終わりではなく、その次もあなたに会おうとしてくれるか</b>を見ていきましょう。`
+      ),
+
+      advice:p(
+        `<b>彼の好意を疑いすぎず、あなたも好意を返してみましょう。</b>`,
+        `彼から誘ってくれたら「嬉しい」と素直に伝える。<br>デートが楽しかったら「また行きたい」と伝える。`,
+        `ここまで彼から行動してくれているなら、あなたが好意を返すことで、彼も「脈ありかも」と感じやすくなります。`,
+        `駆け引きして彼の気持ちを確かめようとするより、<b>彼がしてくれたことに対して、嬉しい気持ちを素直に返してみてください。</b>`
+      ),
+
+      message:p(
+        `ここまで彼から具体的な行動が出ているなら、もう小さなサインを一つずつ探し続けなくても大丈夫です☺️`,
+        `彼はLINEだけではなく、<b>あなたと実際に会うために行動してくれています。</b>`,
+        `だから今は、「本当に脈あり？」と疑い続けるより、二人で過ごす時間を楽しんでみてください。`,
+        `あなたからも「嬉しい」「楽しい」「また会いたい」を少しずつ返していく。`,
+        `そうすることで、彼もあなたの気持ちに自信を持ちやすくなります。`,
+        `<b>ここからは、彼の気持ちを確かめるだけではなく、二人の恋を進めていく段階です💗</b>`
+      )
+    };
+  }
+
+
+  /* =====================
+     🌷
+  ===================== */
+
+  if(level==="flower"){
+
+    if(q5==="yes" && q6==="no"){
+
+      return{
+
+        watch:p(
+          `彼から誘いはあります。`,
+          `でも、まだ具体的な日にちまでは決まっていません。`,
+          `ここから大切なのは、<b>「会おう」が言葉だけで終わらず、実際の約束につながるか</b>です。`,
+          `あなたが予定を伝えたあと、彼も日にちを決めようとしてくれるかを見てみましょう。`
+        ),
+
+        advice:p(
+          `<b>一度だけ、あなたの空いている日を伝えてみましょう。</b>`,
+          `「○日か○日なら空いてるよ☺️」`,
+          `これで十分です。`,
+          `そこからは彼に任せてみてください。`,
+          `彼も会いたいと思っているなら、日にちを選んだり、別の日を提案したりと、何かしら行動が出てきます。`
+        ),
+
+        message:p(
+          `誘ってくれたのに日にちが決まらないと、「社交辞令だった？」って不安になりますよね。`,
+          `でも、一度予定が決まらなかっただけで答えを出す必要はありません。`,
+          `あなたから会える日を伝えて、<b>そのあと彼がどう動くか。</b>`,
+          `そこまで見てから判断して大丈夫です。`,
+          `<b>脈あり確定まで、あと一歩😉</b>`
+        )
+      };
+    }
+
+
+    if(q5==="yes" && q6==="yes" && q7==="no"){
+
+      return{
+
+        watch:p(
+          `彼はあなたと会うために、具体的に予定を決めようとしてくれています。`,
+          `一度予定が合わなかったあと、彼から別の日の提案はまだありません。`,
+          `ここは少しだけ様子を見て、<b>彼の方からもう一度会う話を出してくれるか</b>を見てみましょう。`,
+          `一度の予定変更だけで判断する必要はありません。大切なのは、その後も彼があなたと会おうとしてくれるかです。`
+        ),
+
+        advice:p(
+          `<b>もしあなたが断った側なら、「この日は無理だけど、○日なら空いてるよ」と一度だけ伝えてみてください。</b>`,
+          `それ以上は何度も予定を出さなくて大丈夫。`,
+          `あとは、彼も会うために動いてくれるかを見てみましょう。`
+        ),
+
+        message:p(
+          `予定が合わなかったあとに別の日を言ってくれないと、不安になると思います。`,
+          `でも、これだけで今まで出ていたサインが全部なくなるわけではありません。`,
+          `一度あなたから会える日を伝えて、その後は彼の行動を見る。`,
+          `<b>今は追いかけすぎず、彼からの次の一手を待ってみて大丈夫です☺️</b>`
+        )
+      };
+    }
+
+
+    if(q5==="yes" && q6==="yes"){
+
+      return{
+
+        watch:p(
+          `彼はあなたと会うために、具体的に予定を決めようとしてくれています。`,
+          q7==="na"
+            ?`次に見るのは、<b>もし予定が合わなかったときも、それでも会おうとしてくれるか。</b>`
+            :`ここからは、<b>会う約束が実際のデートにつながっていくか</b>を見ていきましょう。`,
+          q7==="na"
+            ?`「じゃあ○日は？」と別の日を考えてくれる。ここまで行動が続けば、さらに分かりやすいサインになります。`
+            :`お店や待ち合わせを一緒に決めたり、会うための行動が続いていくかが次のポイントです。`
+        ),
+
+        advice:p(
+          `<b>今は素直に、彼との予定を決めていきましょう。</b>`,
+          `わざと返信を遅らせたり、予定が空いているのに忙しいふりをしたりする必要はありません。`,
+          `会いたいなら「その日空いてるよ☺️」と返して大丈夫。`,
+          `<b>彼が行動してくれているときは、あなたも会いたい気持ちを返してあげましょう。</b>`
+        ),
+
+        message:p(
+          `ここまで具体的に予定を決めようとしてくれているなら、かなりいいところまで来ています☺️`,
+          `好きな人のことほど、「でも、たまたまかも」と不安になります。`,
+          `でも、言葉だけではなく<b>あなたと会うために動いていること</b>も、ちゃんと見てあげてください。`,
+          `<b>脈あり確定まで、あと一歩😉</b>`
+        )
+      };
+    }
+
+
+    if(q5==="yes"){
+
+      return{
+
+        watch:p(
+          `彼から「会おう」という行動が出ています☺️`,
+          `次に見てほしいのは、<b>その誘いを実際の約束まで進めようとしてくれるか。</b>`,
+          `「また行こう」で終わるのではなく、「いつ空いてる？」「○日はどう？」と、具体的な日にちを決めようとしてくれるかを見てみましょう。`
+        ),
+
+        advice:p(
+          `<b>彼から誘われたら、会いたい気持ちは素直に返してあげましょう。</b>`,
+          `「行きたい！」<br>「私も行ってみたい☺️」`,
+          `くらいで十分。`,
+          `彼があなたの反応を見て、さらに予定を決めやすくなります。`
+        ),
+
+        message:p(
+          `彼から「会おう」としてくれているのは、大切にしていい行動です☺️`,
+          `ここからは、その言葉が実際の約束につながっていくかを見てみましょう。`,
+          `あなたも会いたいと思っているなら、それを隠しすぎなくて大丈夫。`,
+          `<b>脈あり確定まで、あと一歩😉</b>`
+        )
+      };
+    }
+
+
+    return{
+
+      watch:p(
+        `LINEや会話の中では、彼からのサインが確認できています。`,
+        `次に見てほしいのは、<b>その興味が「実際に会いたい」という行動につながるか。</b>`,
+        `彼から「ご飯行こう」「今度○○行かない？」と誘ってくれる。`,
+        `ここが出てくると、LINEの中だけでは分からなかった彼の気持ちが、さらに見えやすくなります。`
+      ),
+
+      advice:p(
+        `<b>彼が誘いやすいきっかけを、一つ作ってみましょう。</b>`,
+        `「このお店、前から気になってるんよね」`,
+        `「○○行ってみたいんよね」`,
+        `くらいで大丈夫です。`,
+        `ここであなたからすぐ「一緒に行こう」と誘わず、<b>その話題から彼が会う方向に進めてくれるか</b>を見てみましょう。`
+      ),
+
+      message:p(
+        `彼からあなたへの興味は、行動にも少しずつ表れています☺️`,
+        `ここから大切なのは、<b>その興味が「会いたい」という行動につながっていくか。</b>`,
+        `今は無理に彼の気持ちを聞かなくても大丈夫。`,
+        `彼があなたとの時間を作ろうとしてくれるか。そこを見ていけば、今よりもっと彼の気持ちが分かるようになります。`,
+        `<b>脈あり確定まで、あと一歩😉</b>`
+      )
+    };
+  }
+
+
+  /* =====================
+     🌱
+  ===================== */
+
+  if(level==="sprout"){
+
+    if(q5==="no"){
+
+      return{
+
+        watch:p(
+          `LINEや会話の中では、彼からのサインが確認できています。`,
+          `ここから見てほしいのは、<b>LINEの中だけではなく、実際に会おうとしてくれるか。</b>`,
+          `今はまだ彼から誘いが確認できていません。`,
+          `だからこそ、この先「ご飯行こう」「今度○○行かない？」と、彼から二人で会うきっかけを作ってくれるかを見てみましょう。`
+        ),
+
+        advice:p(
+          `<b>彼が誘いやすい話題を、一つ出してみましょう。</b>`,
+          `「このお店気になってる」<br>「○○行ってみたいんよね」`,
+          `くらいで大丈夫。`,
+          `すぐにあなたから誘うのではなく、<b>その話題から彼が会う方向に進めてくれるか</b>を見てみましょう。`
+        ),
+
+        message:p(
+          `彼からのサインが出ているからこそ、「じゃあなんで誘ってくれないんだろう」と不安になることもあると思います。`,
+          `でも、誘ってこない理由だけで今すぐ脈なしと決める必要はありません。`,
+          `誘うタイミングを探していたり、あなたの気持ちが分からず動けなかったりする男性もいます。`,
+          `だから今は、彼が動きやすいきっかけを一つ作って、その後の行動を見てみてください。`,
+          `<b>この恋は、ちゃんとこれから発展していく可能性があります🌱</b>`
+        )
+      };
+    }
+
+
+    if(q5==="na"){
+
+      return{
+
+        watch:p(
+          `今はまだ「会う・誘う」という段階まで進んでいないだけ。`,
+          `まずは、<b>今出ている彼からのサインがこれからも続くか</b>を見てみましょう。`,
+          `LINEや会話が増えて、二人の距離が近づいてくれば、自然と「会う」という次の段階に進むこともあります。`
+        ),
+
+        advice:p(
+          `<b>今は無理にデートにつなげようとしなくて大丈夫です。</b>`,
+          `彼との会話を楽しむ。<br>彼の話に興味を持つ。<br>あなたのことも少しずつ知ってもらう。`,
+          `まずは二人が話しやすい関係を作っていきましょう。`
+        ),
+
+        message:p(
+          `まだ「誘う・誘われる」という場面が来ていないなら、そこで不安にならなくて大丈夫☺️`,
+          `恋愛には順番があります。`,
+          `まず話す。<br>もっと知りたくなる。<br>また話したくなる。<br>そして、会いたくなる。`,
+          `今はその途中かもしれません。`,
+          `<b>この恋は、ちゃんとこれから発展していく可能性があります🌱</b>`
+        )
+      };
+    }
+
+
+    return{
+
+      watch:p(
+        `次は、<b>今出ているサインが少しずつ増えていくか</b>を見てみましょう。`,
+        `彼からLINEしてくれる。<br>あなたへの質問が増える。<br>前に話したことを覚えてくれている。`,
+        `そしてその先に、<b>彼から「会おう」とする行動が出てくるか。</b>`,
+        `今ある小さなサインが、次の行動につながっていくかを見ていきましょう。`
+      ),
+
+      advice:p(
+        `<b>彼がもっと話したくなるきっかけを、一つ作ってみましょう。</b>`,
+        `「そういえば、この前言ってた○○どうなった？」と聞いてみたり、彼の好きなものについて話してみたり。`,
+        `あなたからきっかけを作ったあと、<b>彼も会話を広げようとしてくれるか</b>を見てみてください。`
+      ),
+
+      message:p(
+        `彼からすでに、小さなサインは出ています☺️`,
+        `だから今は、一つの行動だけを見て「脈あり？脈なし？」と答えを急がなくて大丈夫。`,
+        `LINEが増える。<br>彼から話題を出してくれる。<br>あなたのことをもっと知ろうとしてくれる。`,
+        `そして、その先に「会いたい」という行動が出てくる。`,
+        `今あるサインが少しずつ増えていけば、彼の気持ちはもっと分かりやすくなります。`,
+        `<b>この恋は、ちゃんとこれから発展していく可能性があります🌱</b>`
+      )
+    };
+  }
+
+
+  /* =====================
+     🔍
+  ===================== */
+
+  if(naCount>noCount){
+
+    return{
+
+      watch:p(
+        `まず見てほしいのは、<b>彼の方からあなたに関わろうとしてくれるか。</b>`,
+        `彼からLINEが来る。<br>あなたのことを質問してくれる。<br>前に話したことを覚えてくれている。`,
+        `そして関係が進んできたら、彼から「会おう」としてくれるかも見てみてください。`,
+        `今はまだ確認できていないだけの項目もあります。`,
+        `<b>これから二人の関わりが増える中で、彼の行動がどう変わっていくか</b>を見ていきましょう。`
+      ),
+
+      advice:p(
+        `<b>今は彼の気持ちを確かめるより、彼と話す機会を少し増やしてみましょう。</b>`,
+        `LINEなら、彼が返しやすい話題を一つ送ってみる。<br>会えるなら、笑顔で話しかけてみる。`,
+        `それくらいで十分です☺️`,
+        `あなたから少しきっかけを作ったとき、<b>彼も会話を続けようとしてくれるか、彼からも関わろうとしてくれるか。</b>`,
+        `そこから見ていけば大丈夫です。`
+      ),
+
+      message:p(
+        `<b>今の結果だけを見て、この恋を諦めなくて大丈夫です。</b>`,
+        `「はい」が少なかったのは、彼に好意がないからとは限りません。`,
+        `まだLINEを始めたばかりだったり、二人で話す機会が少なかったり、そもそも質問にあるような場面が来ていないこともあります。`,
+        `だから今は、答えを急がなくて大丈夫☺️`,
+        `好きな人との恋は、最初から脈あり・脈なしがはっきり分かるものばかりではありません。`,
+        `これから彼と関わる時間が増える中で、彼の行動も少しずつ見えてきます。`,
+        `<b>焦らずOK🙆‍♀️<br>この恋は、まだこれからです。</b>`
+      )
+    };
+  }
+
+
+  return{
+
+    watch:p(
+      `今はまだ、彼から分かりやすい行動が多く出ている段階ではありません。`,
+      `でも、<b>今の行動だけでこの先まで決める必要はありません。</b>`,
+      `これから見てほしいのは、彼からLINEが来るようになる、あなたへの質問が増える、彼から話題を出してくれる、そして彼から会おうとしてくれる。`,
+      `こうした<b>彼発信の行動が増えていくか</b>です。`
+    ),
+
+    advice:p(
+      `<b>今は追いかけるより、彼があなたと関わりやすいきっかけを作ってみましょう。</b>`,
+      `毎日LINEを送ったり、無理に会う約束を作ったりしなくて大丈夫。`,
+      `彼が好きなものについて聞いてみる。<br>会ったときに笑顔で話しかける。`,
+      `まずはそれくらいからで十分です☺️`,
+      `そのあと、<b>彼からもあなたに関わろうとしてくれるか</b>を見てみてください。`
+    ),
+
+    message:p(
+      `今回「いいえ」が多かったからといって、<b>ここでこの恋の答えが決まったわけではありません。</b>`,
+      `今は、彼からの分かりやすい行動がまだ少ないということ。`,
+      `恋愛は、関わる時間が増えることで相手の気持ちが変わっていくこともあります。`,
+      `だから、無理に振り向かせようと頑張りすぎなくて大丈夫。`,
+      `あなたから少しきっかけを作って、そのあと彼からも近づいてきてくれるかを見ていきましょう。`,
+      `<b>焦らずOK🙆‍♀️<br>今はまだ、答えを出すタイミングではありません。</b>`
+    )
+  };
+}
+
+
+/* =========================
+   結果表示
 ========================= */
 
 function showResult(){
 
-  const r=
-    resultData();
-
+  const r=resultData();
 
   const map={
 
     heart:[
-
       "💗",
-
       "かなり脈ありの可能性があります！",
-
       "彼はあなたに興味を持つだけでなく、実際に会おうとする行動まで出ています。"
-
     ],
-
 
     flower:[
-
       "🌷",
-
-      "興味はありそうです",
-
-      "彼の行動から、あなたへの興味を感じるサインがいくつか確認できています。"
-
+      "脈あり確定まで、あと一歩😉",
+      "彼の行動から、あなたへの好意を感じるサインがいくつも確認できています。"
     ],
-
 
     sprout:[
-
       "🌱",
-
       "脈ありサインが少しずつ出ています",
-
-      "今確認できているサインを大切にしながら、もう少し彼の行動を見ていきましょう。"
-
+      "今確認できているサインを大切にしながら、彼のこれからの行動を見ていきましょう。"
     ],
 
-
     search:[
-
       "🔍",
-
-      "まだ気持ちを見極める段階です",
-
-      "今は判断材料が少ないだけ。これからの彼の行動を見ていきましょう。"
-
+      "焦らなくてOK🙆‍♀️ まだこれからです",
+      "今は彼の気持ちを判断できる場面がまだ少ないだけ。これから見えてくる行動もあります。"
     ]
 
   };
 
+  const m=map[r.level];
 
-  const m=
-    map[r.level];
-
-
-  $("rEmoji").textContent=
-    m[0];
-
-  $("rTitle").textContent=
-    m[1];
-
-  $("rSub").textContent=
-    m[2];
+  $("rEmoji").textContent=m[0];
+  $("rTitle").textContent=m[1];
+  $("rSub").textContent=m[2];
 
 
   const yesItems=
-
     qs.map(
       (q,j)=>
         answers[j]==="yes"
-          ? q.yes
-          : null
-    )
-
-    .filter(Boolean);
+          ?q.yes
+          :null
+    ).filter(Boolean);
 
 
   $("confirmed").innerHTML=
-
     yesItems.length
-
-    ? yesItems.map(
-        x=>
-          `<div class="checkitem">
-             ✓ ${x}
-           </div>`
-      ).join("")
-
-    : `<div>
-         今のところ、はっきり確認できた行動はまだありません。
-       </div>`;
+      ?yesItems.map(
+          x=>`<div class="checkitem">✓ ${x}</div>`
+        ).join("")
+      :`<div>
+          今はまだ、はっきり確認できた行動がなくても大丈夫。
+          これから二人の関わりが増える中で見えてくる行動もあります。
+        </div>`;
 
 
-  if(
-    answers[4]!=="yes" ||
-    answers[5]!=="yes"
-  ){
+  const copy=
+    getResultCopy(r.level);
 
-    $("watch").textContent=
+  $("watch").innerHTML=
+    copy.watch;
 
-      "次は、彼から「会おう」という行動が出てくるか、そして会う話になったときに具体的な日にちを決めようとしてくれるかを見ていきましょう。";
+  $("advice").innerHTML=
+    copy.advice;
 
-  }else{
-
-    $("watch").textContent=
-
-      "会う約束だけでなく、実際に会ったときのあなたへの接し方や、その後も次の予定につながっていくかを見ていきましょう。";
-
-  }
-
-
-  if(
-    answers[4]!=="yes"
-  ){
-
-    $("advice").innerHTML=
-
-      `<b>
-        行ってみたい場所の話題を一つ出してみましょう。
-       </b>
-
-       <br><br>
-
-       「このお店、前から気になってるんよね」
-       くらいで大丈夫。
-
-       <br><br>
-
-       すぐにあなたから誘わず、
-       その話題から彼が会う方向に
-       進めてくれるか見てみましょう。`;
-
-  }else{
-
-    $("advice").innerHTML=
-
-      `<b>
-        今出ている彼の行動を、
-        そのまま見ていきましょう。
-       </b>
-
-       <br><br>
-
-       答えを急いで聞くより、
-       約束を守る・会う時間を作る・
-       次の予定を決めるなど、
-       これからも彼の行動が続くかを
-       確認してみてください。`;
-
-  }
-
-
-  if(
-    r.level==="search"
-  ){
-
-    $("message").textContent=
-
-      "今は「脈なし」と決める必要はありません。「該当なし・まだその状況になっていない」と答えた項目はマイナスではなく、これから確認していく判断材料です。";
-
-  }else{
-
-    $("message").textContent=
-
-      "彼からの行動に、あなたへの興味を感じるサインが出ていますね☺️ 今出ているサインを大切にしながら、ここからも彼の行動を一つずつ確認していきましょう。";
-
-  }
-
+  $("message").innerHTML=
+    copy.message;
 
   screen("result");
 }
 
 
 function restart(){
-
   i=0;
-
   screen("quiz");
-
   render();
 }
 
@@ -1266,29 +1251,18 @@ function resetAll(){
       "すべての回答をリセットしますか？"
     )
   ){
-
     answers=[];
-
     localStorage.removeItem(
       "kimochiAnswers"
     );
-
     screen("start");
-
   }
-
 }
 
 
-if(
-  "serviceWorker" in navigator
-){
-
-  navigator.serviceWorker
-    .register("./sw.js");
-
+if("serviceWorker" in navigator){
+  navigator.serviceWorker.register("./sw.js");
 }
-
 </script>
 
 </body>
