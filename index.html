@@ -542,5 +542,135 @@ if("serviceWorker" in navigator){
 }
 </script>
 
-</body>
+<style>
+/* ===== あと1分。質問・結果画面 UIアップグレード ===== */
+
+/* 質問画面 */
+#quiz{
+  padding-top:18px;
+}
+
+#quiz .progress{
+  margin:6px 0 24px;
+}
+
+#quiz .card{
+  background:rgba(255,255,255,.94);
+  border:1px solid #f3dce2;
+  border-radius:28px;
+  padding:28px 22px;
+  box-shadow:0 14px 40px rgba(91,54,65,.07);
+}
+
+#quiz .q{
+  font-size:22px;
+  line-height:1.65;
+  font-weight:700;
+  letter-spacing:.02em;
+  color:#2d292b;
+  margin-bottom:26px;
+}
+
+/* 回答ボタン */
+#quiz .choice,
+#quiz button{
+  border-radius:18px;
+}
+
+#quiz .choice{
+  background:#fff;
+  border:1px solid #f0dce2;
+  padding:17px 18px;
+  margin:12px 0;
+  box-shadow:0 5px 16px rgba(80,50,60,.04);
+  transition:.18s ease;
+}
+
+#quiz .choice:active{
+  transform:scale(.98);
+  background:#fff5f7;
+}
+
+/* 結果画面 */
+#result{
+  padding-top:12px;
+}
+
+#result .sectionTitle{
+  margin:30px 4px 12px;
+  font-size:13px;
+  font-weight:800;
+  letter-spacing:.12em;
+  color:#e56b84;
+}
+
+#result .card,
+#result .tip{
+  background:rgba(255,255,255,.96);
+  border:1px solid #f2dce2;
+  border-radius:26px;
+  padding:22px 20px;
+  margin-bottom:18px;
+  line-height:1.8;
+  box-shadow:0 12px 34px rgba(91,54,65,.07);
+}
+
+/* 今のあなたにやってほしいこと */
+#result .tip{
+  position:relative;
+  background:linear-gradient(145deg,#fff8fa 0%,#ffffff 100%);
+  border:1px solid #f3ced8;
+  padding:24px 21px;
+}
+
+/* 結果内の強調 */
+#result strong{
+  color:#292426;
+  font-weight:800;
+}
+
+#result .card p,
+#result .tip p{
+  margin:8px 0;
+}
+
+/* 結果画面ボタン */
+#result .btn{
+  margin-top:14px;
+  min-height:58px;
+  border-radius:18px;
+  font-size:16px;
+  font-weight:700;
+  box-shadow:0 9px 24px rgba(255,102,128,.16);
+}
+
+#result .btn.secondary{
+  background:#fff;
+  color:#746d70;
+  border:1px solid #eadde1;
+  box-shadow:none;
+}
+
+/* 全画面共通の細かな質感 */
+.card,
+.tip,
+.btn{
+  -webkit-tap-highlight-color:transparent;
+}
+
+@media(max-width:480px){
+  #quiz .card{
+    padding:24px 18px;
+  }
+
+  #quiz .q{
+    font-size:20px;
+  }
+
+  #result .card,
+  #result .tip{
+    padding:20px 18px;
+  }
+}
+</style></body>
 </html>
