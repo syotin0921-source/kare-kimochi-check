@@ -1,122 +1,546 @@
 <!doctype html>
 <html lang="ja">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#fff7f6">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#fff8f8">
 <title>彼の気持ちチェック｜あと1分。</title>
 <link rel="manifest" href="manifest.json">
+
 <style>
-:root{--pink:#ff6680;--pink2:#fff0f2;--ink:#282327;--muted:#746b70;--line:#f2d9dd;--cream:#fffaf7}
-*{box-sizing:border-box}body{margin:0;background:#fff7f6;color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic",sans-serif}
-.app{max-width:520px;margin:auto;min-height:100vh;background:linear-gradient(#fffafa,#fff);padding:22px 18px 48px}
-.brand{font-size:13px;text-align:center;font-weight:700;letter-spacing:.08em}.hero{padding:28px 8px 14px}
-.ill{width:116px;height:116px;margin:0 auto 16px;border-radius:50%;background:var(--pink2);display:grid;place-items:center;font-size:55px}
-.hero-art{width:100%;aspect-ratio:1.45/1;object-fit:cover;object-position:center 43%;display:block;border-radius:28px;margin:0 auto 24px;box-shadow:0 12px 30px rgba(178,104,121,.12)}
-h1{font-size:31px;line-height:1.25;margin:5px 0 14px;color:#ef6178}h2{font-size:23px;line-height:1.45}h3{font-size:18px}
-p{line-height:1.85}.card{background:#fff;border:1px solid #f4dfe2;border-radius:22px;padding:20px;margin:16px 0;box-shadow:0 8px 24px rgba(86,50,58,.05)}
-.list{line-height:2}.btn{width:100%;border:0;border-radius:999px;padding:17px 20px;background:var(--pink);color:#fff;font-weight:800;font-size:17px;box-shadow:0 8px 18px rgba(255,102,128,.22)}
-.btn.secondary{background:#fff;color:#d94f68;border:1px solid #f2cbd2;box-shadow:none}.small{font-size:12px;color:var(--muted);line-height:1.7}
-.progress{height:7px;background:#f6dfe3;border-radius:10px;overflow:hidden;margin:14px 0 26px}.bar{height:100%;background:var(--pink);transition:.25s}
-.option{display:block;width:100%;text-align:left;margin:12px 0;padding:16px;border-radius:18px;border:1px solid #f2d9dd;background:#fff;font-size:15px}
-.option.on{background:#fff0f2;border:2px solid var(--pink);font-weight:700}.nav{display:flex;gap:10px;margin-top:24px}.nav .btn{flex:1}
-.badge{display:inline-block;background:#fff0f2;color:#e95670;border-radius:999px;padding:7px 12px;font-size:13px;font-weight:700}
-.result-title{font-size:24px;color:#e95771}.check{padding:8px 0;line-height:1.6}.section-title{margin-top:28px}
-.tip{background:#fff9ec;border-color:#f4e4bd}.article{background:#fff4f5}.quote{font-weight:700;color:#d94f68}
-.hidden{display:none}.reset{border:0;background:none;color:#b36b77;text-decoration:underline;margin:18px auto;display:block}
-.diff{background:#fff9ec}.install{background:#fff}
+:root{
+  --pink:#ff6680;
+  --pink2:#fff0f2;
+  --ink:#262326;
+  --muted:#746d70;
+  --line:#f0d9de;
+}
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  background:linear-gradient(#fffafa,#fff);
+  color:var(--ink);
+  font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic",sans-serif;
+}
+
+.app{
+  max-width:520px;
+  margin:auto;
+  min-height:100vh;
+  padding:28px 22px 42px;
+}
+
+.brand{
+  text-align:center;
+  font-size:13px;
+  font-weight:700;
+  margin:4px 0 18px;
+}
+
+.hero{
+  display:block;
+  width:100%;
+  max-height:310px;
+  object-fit:cover;
+  border-radius:28px;
+  margin:0 auto 22px;
+  box-shadow:0 12px 35px rgba(177,91,111,.12);
+}
+
+h1{
+  font-size:34px;
+  line-height:1.2;
+  margin:0 0 20px;
+  color:var(--pink);
+  letter-spacing:-1px;
+  white-space:nowrap;
+}
+
+.lead{
+  font-size:17px;
+  line-height:1.9;
+  margin:0 0 24px;
+}
+
+.card{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:24px;
+  padding:20px;
+  box-shadow:0 8px 24px rgba(130,80,95,.05);
+  margin:18px 0;
+}
+
+.card strong{font-size:18px}
+.list{line-height:2.15;margin-top:8px}
+
+.btn{
+  width:100%;
+  border:0;
+  border-radius:999px;
+  padding:18px 16px;
+  font-size:18px;
+  font-weight:800;
+  background:var(--pink);
+  color:#fff;
+  box-shadow:0 10px 24px rgba(255,102,128,.25);
+}
+
+.btn.secondary{
+  background:#fff;
+  color:#d94f69;
+  border:1px solid var(--line);
+  box-shadow:none;
+}
+
+.note{
+  font-size:12px;
+  color:var(--muted);
+  line-height:1.7;
+  margin-top:16px;
+}
+
+.hidden{display:none!important}
+
+.top{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  margin-bottom:12px;
+  font-weight:700;
+}
+
+.progress{
+  height:7px;
+  background:#f7e5e9;
+  border-radius:99px;
+  overflow:hidden;
+  margin-bottom:28px;
+}
+
+.progress>div{
+  height:100%;
+  background:var(--pink);
+  transition:.25s;
+}
+
+.qno{
+  color:var(--pink);
+  font-weight:800;
+  margin-bottom:8px;
+}
+
+.question{
+  font-size:23px;
+  line-height:1.55;
+  font-weight:800;
+  margin-bottom:22px;
+}
+
+.options{
+  display:grid;
+  gap:12px;
+}
+
+.option{
+  width:100%;
+  text-align:left;
+  padding:16px 18px;
+  border-radius:18px;
+  border:1.5px solid var(--line);
+  background:#fff;
+  font-size:16px;
+  line-height:1.5;
+}
+
+.option.selected{
+  background:var(--pink2);
+  border-color:var(--pink);
+  color:#c9435d;
+  font-weight:800;
+}
+
+.nav{
+  display:grid;
+  grid-template-columns:1fr 1.45fr;
+  gap:12px;
+  margin-top:24px;
+}
+
+.done{
+  text-align:center;
+  padding-top:40px;
+}
+
+.done .big{
+  font-size:30px;
+  font-weight:900;
+  line-height:1.5;
+}
+
+.resultHero{
+  text-align:center;
+  background:var(--pink2);
+  border-radius:28px;
+  padding:26px 18px;
+  margin-bottom:18px;
+}
+
+.resultEmoji{font-size:48px}
+
+.resultTitle{
+  font-size:24px;
+  font-weight:900;
+  line-height:1.5;
+}
+
+.sectionTitle{
+  font-size:19px;
+  font-weight:900;
+  margin:28px 0 12px;
+}
+
+.checkitem{
+  padding:11px 0;
+  border-bottom:1px solid #f3e8ea;
+  line-height:1.6;
+}
+
+.tip{
+  background:#fff8e8;
+  border-radius:20px;
+  padding:18px;
+  line-height:1.8;
+}
+
+.message{line-height:1.9}
+
+@media(max-width:370px){
+  h1{font-size:30px}
+  .app{padding-left:18px;padding-right:18px}
+}
 </style>
 </head>
-<body><main class="app" id="app"></main>
+
+<body>
+<main class="app">
+
+<section id="start">
+  <div class="brand">あと1分。</div>
+
+  <img class="hero"
+       src="hero-girl.png"
+       alt="スマホを持つ女性のイラスト">
+
+  <h1>彼の気持ちチェック</h1>
+
+  <p class="lead">
+    LINEからデート前までの彼の行動を、一緒に確認してみましょう☺️
+  </p>
+
+  <div class="card">
+    <strong>8つの質問に答えるだけで</strong>
+    <div class="list">
+      ✓ 今確認できている彼の行動<br>
+      ✓ これから見てほしいポイント<br>
+      ✓ 今のあなたにやってほしいこと
+    </div>
+  </div>
+
+  <button class="btn" onclick="startCheck()">
+    チェックを始める →
+  </button>
+
+  <div class="note">
+    ※回答はこの端末内に保存されます。名前やメールアドレスの入力は必要ありません。
+  </div>
+</section>
+
+<section id="quiz" class="hidden">
+  <div class="top">
+    <span>彼の気持ちチェック</span>
+    <span id="count"></span>
+  </div>
+
+  <div class="progress"><div id="bar"></div></div>
+
+  <div class="qno" id="qno"></div>
+  <div class="question" id="question"></div>
+  <div class="options" id="options"></div>
+
+  <div class="nav">
+    <button class="btn secondary" onclick="back()">← 戻る</button>
+    <button class="btn" id="next" onclick="next()">次へ →</button>
+  </div>
+</section>
+
+<section id="done" class="hidden done">
+  <div style="font-size:52px">💗</div>
+
+  <div class="big">
+    8問すべて<br>
+    回答できました<br>
+    お疲れさまでした！
+  </div>
+
+  <p class="lead">
+    今の彼の行動をもとに、一緒に彼の気持ちを確認してみましょう。
+  </p>
+
+  <button class="btn" onclick="showResult()">
+    彼の気持ちを確認する♡
+  </button>
+</section>
+
+<section id="result" class="hidden">
+
+  <div class="top">
+    <span>彼の気持ちチェック</span>
+    <span>結果</span>
+  </div>
+
+  <div class="resultHero">
+    <div class="resultEmoji" id="rEmoji"></div>
+    <div class="resultTitle" id="rTitle"></div>
+    <div id="rSub"></div>
+  </div>
+
+  <div class="sectionTitle">今回確認できた彼の行動</div>
+  <div class="card" id="confirmed"></div>
+
+  <div class="sectionTitle">これから見ていくポイント</div>
+  <div class="card message" id="watch"></div>
+
+  <div class="sectionTitle">💡 今のあなたにやってほしいこと</div>
+  <div class="tip" id="advice"></div>
+
+  <div class="sectionTitle">僕からあなたへ</div>
+  <div class="card message" id="message"></div>
+
+  <button class="btn" onclick="restart()" style="margin-top:12px">
+    もう一度チェックする →
+  </button>
+
+  <button class="btn secondary" onclick="resetAll()" style="margin-top:12px">
+    すべての回答をリセット
+  </button>
+</section>
+
+</main>
+
 <script>
 const qs=[
-["彼からLINEしてくれることがありますか？",["はい","いいえ","まだ判断できるほどLINEしていない"]],
-["一度LINEが終わっても、後日また彼から連絡してくれますか？",["はい","いいえ","LINEがずっと続いているので該当しない"]],
-["彼からあなたについて質問してくれることがありますか？",["はい","いいえ","まだ判断できるほどLINEしていない"]],
-["以前話したことを覚えていて、彼からその話題に触れてくれることがありますか？",["はい","いいえ","まだ判断できるほどLINEしていない"]],
-["彼から「会おう」と誘ってくれることがありますか？",["はい","いいえ","まだ二人で会う話になったことがない"]],
-["「今度行こう」で終わらず、彼から具体的に日程を決めようとしてくれますか？",["はい","いいえ","まだ二人で会う話になったことがない"]],
-["予定が合わなかったとき、彼から別の日を提案してくれますか？",["はい","いいえ","予定が合わなかったことがない"]],
-["デートが決まったあと、彼もお店や待ち合わせを決めようとしてくれますか？",["はい","いいえ","まだデートが決まったことがない"]]
+ {q:"彼からLINEしてくれることがありますか？",na:"まだ判断できるほどLINEしていない",type:"A",yes:"彼からLINEしてくれる"},
+ {q:"あなたからLINEを終わらせたあと、彼からまた連絡してくれることがありますか？",na:"まだその状況になっていない",type:"B",yes:"LINEが終わっても彼からまた連絡してくれる"},
+ {q:"彼から、あなたについて質問してくれることがありますか？",na:"まだ判断できるほど話していない",type:"A",yes:"あなたについて質問してくれる"},
+ {q:"前に話したことを覚えていたり、その話題をまた出してくれることがありますか？",na:"まだその状況になっていない",type:"B",yes:"前に話したことを覚えてくれている"},
+ {q:"彼から「会おう」「ご飯行こう」など、会う誘いがありますか？",na:"まだその状況になっていない",type:"C",yes:"彼から会おうと誘ってくれる"},
+ {q:"会う話になったとき、彼から具体的な日にちを決めようとしてくれますか？",na:"まだその状況になっていない",type:"C",yes:"具体的な日にちを決めようとしてくれる"},
+ {q:"予定が合わなかったとき、彼から別の日を提案してくれますか？",na:"まだその状況になっていない",type:"C",yes:"予定が合わなくても別の日を提案してくれる"},
+ {q:"会うことが決まったあと、お店や待ち合わせなどを彼も一緒に決めようとしてくれますか？",na:"まだその状況になっていない",type:"C",yes:"お店や待ち合わせを一緒に決めようとしてくれる"}
 ];
-let ans=JSON.parse(localStorage.getItem("kimochi_answers")||"null")||Array(8).fill(null);
-let prev=JSON.parse(localStorage.getItem("kimochi_previous")||"null");
-let idx=0;
-const A=[0,2],B=[1,3],C=[4,5,6,7];
-function save(){localStorage.setItem("kimochi_answers",JSON.stringify(ans))}
-function shell(x){document.getElementById("app").innerHTML=x;scrollTo(0,0)}
-function start(){
-shell(`<div class="brand">あと1分。</div><section class="hero"><img class="hero-art" src="hero-girl.png" alt="スマホを見ながら彼のことを考える女性のイラスト"><h1>彼の気持ち<br>チェック</h1><p>LINEからデート前までの彼の行動を、一緒に確認してみましょう☺️</p></section>
-<div class="card"><b>8つの質問に答えるだけで</b><div class="list">✓ 今確認できている彼の行動<br>✓ これから見てほしいポイント<br>✓ 今のあなたにやってほしいこと</div></div>
-<button class="btn" onclick="question(0)">チェックを始める →</button><p class="small">※回答はこの端末内に保存されます。名前やメールアドレスの入力は必要ありません。</p>`)
+
+let answers=JSON.parse(localStorage.getItem("kimochiAnswers")||"[]");
+let i=0;
+
+const $=id=>document.getElementById(id);
+
+function screen(id){
+ ["start","quiz","done","result"].forEach(
+   x=>$(x).classList.toggle("hidden",x!==id)
+ );
+ scrollTo(0,0);
 }
-function question(i){idx=i; let q=qs[i];
-shell(`<div class="brand">彼の気持ちチェック</div><div><b>${i+1} / 8</b></div><div class="progress"><div class="bar" style="width:${(i+1)*12.5}%"></div></div>
-<span class="badge">Q${i+1}</span><h2>${q[0]}</h2>
-${q[1].map((o,j)=>`<button class="option ${ans[i]===j?'on':''}" onclick="pick(${j})">${ans[i]===j?'✓':'○'} ${o}</button>`).join("")}
-<div class="nav">${i?`<button class="btn secondary" onclick="question(${i-1})">← 戻る</button>`:''}<button class="btn" ${ans[i]===null?'disabled style="opacity:.45"':''} onclick="${i===7?'ready()':`question(${i+1})`}">${i===7?'回答完了':'次へ →'}</button></div>`)
+
+function startCheck(){
+ i=0;
+ screen("quiz");
+ render();
 }
-function pick(j){ans[idx]=j;save();question(idx)}
-function ready(){shell(`<div class="brand">彼の気持ちチェック</div><div class="progress"><div class="bar" style="width:100%"></div></div><div class="hero"><div class="ill">☺️</div><h2>8問すべて回答できました<br>お疲れさまでした！</h2><p>今の彼の行動をもとに、<b>一緒に彼の気持ちを確認してみましょう。</b></p></div><button class="btn" onclick="result()">💗 彼の気持ちを確認する💓</button><p style="text-align:center">↑↑↑<br><b>ここをタップすると判定結果へ。</b></p>`)}
-function calc(){
- let valid=ans.map((x,i)=>x===0||x===1?i:null).filter(x=>x!==null), yes=valid.filter(i=>ans[i]===0);
- let ratio=valid.length?yes.length/valid.length:0;
- let groups=[A,B,C].filter(g=>g.some(i=>ans[i]===0)).length;
- if(ans[4]===0&&ans[5]===0&&ratio>=.7)return "heart";
- if(ratio>=.5&&groups>=2)return "flower";
- if(yes.length>=1)return "sprout";
- return "search";
+
+function render(){
+ $("count").textContent=`${i+1} / 8`;
+ $("bar").style.width=`${(i+1)/8*100}%`;
+ $("qno").textContent=`Q${i+1}`;
+ $("question").textContent=qs[i].q;
+
+ const opts=[
+   ["yes","はい"],
+   ["no","いいえ"],
+   ["na",qs[i].na]
+ ];
+
+ $("options").innerHTML=opts.map(([v,t])=>
+   `<button class="option ${answers[i]===v?"selected":""}"
+   onclick="choose('${v}')">
+   ${answers[i]===v?"✓ ":""}${t}</button>`
+ ).join("");
+
+ $("next").textContent=i===7
+   ?"回答を完了する →"
+   :"次へ →";
 }
-const titles={heart:"💗 脈ありサインがかなり出ています😆",flower:"🌷 あなたへの興味を感じるサインが出ています☺️",sprout:"🌱 脈ありサインが少しずつ出ています☺️",search:"🔍 焦らずOK🙆‍♀️ これから脈ありサインを見つけていきましょう☺️"};
-const yesLabels=["彼からLINEしてくれる","LINEが終わっても、後日また彼から連絡してくれる","あなたについて質問してくれる","以前の話を覚えて、彼から触れてくれる","彼から「会おう」と誘ってくれる","具体的に日程を決めようとしてくれる","予定が合わないとき、別の日を提案してくれる","デートのお店や待ち合わせを一緒に決めようとしてくれる"];
-function adviceIndex(){
- // relationship-stage oriented prototype
- if(ans[7]===1)return 7;if(ans[6]===1)return 6;if(ans[5]===1)return 5;if(ans[4]===1)return 4;
- for(let i of [0,1,2,3]) if(ans[i]===1)return i; return null;
+
+function choose(v){
+ answers[i]=v;
+ localStorage.setItem(
+   "kimochiAnswers",
+   JSON.stringify(answers)
+ );
+ render();
 }
-const adv=[
-["あなたからLINEする回数を少しだけ減らしてみましょう","いつもあなたからLINEを始めているなら、彼から連絡するタイミングがないだけかもしれません。一度こちらから送るのを少し待って、彼からLINEしてくれることがあるかを見てみてください。"],
-["彼が次にLINEしやすい「続き」を残してみましょう","「明日、前に言ってた○○行ってくる☺️」「明日ちょっと大事な仕事あるんよね。頑張ってくる！」のように、彼があとから聞ける話題を一つ残します。「また報告するね」と自分から次のLINEを約束せず、彼から続きを聞いてくれるかを見てみましょう。"],
-["彼が質問しやすい話題を一つ出してみましょう","「最近、新しいこと始めたんよね☺️」「週末ちょっと楽しみな予定ある！」など、全部を話さず彼が聞ける部分を少し残してみてください。彼からあなたについて聞いてくれるかを見てみましょう。"],
-["少し先に結果がわかる予定を話してみましょう","「来週、大事な仕事あるんよね」など、あとから続きを聞ける話題を一つ伝えてみてください。その後あなたからすぐ報告せず、彼が覚えて後から聞いてくれるかを見てみましょう。"],
-["行ってみたい場所の話題を一つ出してみましょう","「○○ってお店、前から気になってるんよね☺️」「○○のイベント行ってみたい！」くらいで大丈夫。あなたからすぐ「一緒に行かない？」と誘わず、彼から会う方向に話を進めてくれるかを見てみましょう。"],
-["彼が日程を決めやすいところまで返してみましょう","「行きたい☺️ 来週なら土日どっちも空いてるよ」のように、行きたい気持ち＋空いている日まで伝え、そこから彼が具体的に予定を決めようとしてくれるかを見てみましょう。"],
-["「また行きたい」は伝えて、次の日程は彼に任せてみましょう","「そっか！また予定合う日に行きたい☺️」と会いたい気持ちは伝えます。そのうえで次の日程を何個も出さず、彼から別の日を提案してくれるかを見てみましょう。"],
-["一つだけ彼に相談してみましょう","「お店どうする？☺️」「何時くらいに待ち合わせする？」など一つだけ相談し、彼も一緒に動いてくれるかを見てみましょう。"]
-];
-function nextPoint(){
- if(ans[4]!==0)return "次は、LINEでのやり取りから一歩進んで、彼から「会おう」という行動が出てくるかを見ていきましょう。";
- if(ans[5]!==0)return "次は、「会おう」という言葉だけでなく、彼から具体的に日程を決めようとしてくれるかを見ていきましょう。";
- return "今確認できている彼からの行動が、その後も続いているかを見ていきましょう。";
+
+function next(){
+ if(!answers[i]){
+   alert("回答を1つ選んでください");
+   return;
+ }
+
+ if(i<7){
+   i++;
+   render();
+   scrollTo(0,0);
+ }else{
+   screen("done");
+ }
 }
-function comment(r){
- if(r==="heart")return "これだけ彼からの行動が出ているなら、彼の好意はしっかり感じられます。今確認できている行動を大切にしながら、次は実際に会っているときの彼も一緒に見ていきましょう☺️";
- if(r==="flower")return "彼からあなたへの興味を感じる行動が、ちゃんと出ていますね☺️ 今出ている彼からの行動を大切にしながら、ここからさらに彼の気持ちを見ていきましょう。彼から新しい行動があったときは、またこのチェックを使ってみてください。彼との関係が進むたびに、何度でも一緒に確認していきましょう☺️";
- if(r==="sprout")return "脈ありサインが少しずつ出てきていますね☺️ 今出ている彼からの行動を大切にしながら、ここから少しずつ判断材料を増やしていけば大丈夫です。まずは今回の一つを試して、そのとき彼がどう動いてくれるのかを見てみてください。焦らなくて大丈夫。ここからも僕と一緒に、一つずつ彼の気持ちを確認していきましょう☺️";
- return "ここから彼の気持ちを一つずつ見つけていけば大丈夫です☺️ 今の段階で無理に「脈あり」「脈なし」の答えを出す必要はありません。まずは今回の一つを試して、そのとき彼がどう動いてくれるのかを見てみてください。ここから一緒に、彼の気持ちを一つずつ確認していきましょう☺️";
+
+function back(){
+ if(i===0){
+   screen("start");
+ }else{
+   i--;
+   render();
+   scrollTo(0,0);
+ }
 }
-function diffBlock(){
- if(!prev)return "";
- let changes=[]; for(let i=0;i<8;i++)if(prev[i]!==ans[i])changes.push(i);
- if(!changes.length)return `<div class="card diff"><h3>✨ 前回から変わったところ</h3><p>今回は前回から大きな変化はありませんでした。焦らなくて大丈夫です。今は前回お伝えしたポイントを引き続き見ていきましょう☺️</p></div>`;
- let positive=changes.filter(i=>prev[i]!==0&&ans[i]===0);
- if(positive.length)return `<div class="card diff"><h3>✨ 前回から変わったところ</h3>${positive.map(i=>`<div class="check">✓ ${yesLabels[i]}</div>`).join("")}<p>前回はまだ確認できていなかった彼からの行動が、今回は確認できています☺️</p></div>`;
- return `<div class="card diff"><h3>👀 今回あらためて見ていきたいところ</h3><p>前回と変わった回答があります。結果の色だけでなく、ここから彼がどう動いてくれるかを一緒に見ていきましょう☺️</p></div>`;
+
+function resultData(){
+
+ const valid=answers.filter(
+   x=>x==="yes"||x==="no"
+ ).length;
+
+ const yes=answers.filter(
+   x=>x==="yes"
+ ).length;
+
+ const types=new Set(
+   qs.map((q,j)=>
+     answers[j]==="yes" ? q.type : null
+   ).filter(Boolean)
+ );
+
+ let level;
+
+ if(
+   answers[4]==="yes" &&
+   answers[5]==="yes" &&
+   valid &&
+   yes/valid>=.7
+ ){
+   level="heart";
+
+ }else if(
+   valid &&
+   yes/valid>=.5 &&
+   types.size>=2
+ ){
+   level="flower";
+
+ }else if(yes>=1){
+   level="sprout";
+
+ }else{
+   level="search";
+ }
+
+ return {level,yes,valid};
 }
-function result(){
- let r=calc(), yes=ans.map((x,i)=>x===0?i:null).filter(x=>x!==null), ai=adviceIndex();
- localStorage.setItem("kimochi_last_result",r);
- shell(`<div class="brand">彼の気持ちチェック</div>${diffBlock()}<div class="card"><h2 class="result-title">${titles[r]}</h2></div>
- ${yes.length?`<h3 class="section-title">✓ 今回確認できた彼の行動</h3><div class="card">${yes.map(i=>`<div class="check">✓ ${yesLabels[i]}</div>`).join("")}</div>`:""}
- <h3 class="section-title">👀 これから見ていくポイント</h3><div class="card"><p>${nextPoint()}</p></div>
- ${ai!==null?`<h3 class="section-title">💡 今のあなたにやってほしいこと</h3><div class="card tip"><p class="quote">${adv[ai][0]}</p><p>${adv[ai][1]}</p></div>`:""}
- ${(ai===1)?`<h3>📖 今のあなたに合う記事</h3><div class="card article"><b>好きな人とのLINE、自分から終わらせてもいい？</b><p>LINEを終わらせたら、そのまま連絡が来なくなりそう…。そんな不安があるなら、こちらも読んでみてください。</p></div>`:""}
- ${(ai===4 && ans[0]===0)?`<h3>📖 今のあなたに合う記事</h3><div class="card article"><b>男性からLINEは来るのに、なぜデートに誘われない？</b><p>「LINEは彼から来る。でも、なぜかデートには誘われない。」今まさにこの状態なら、こちらも読んでみてください。</p></div>`:""}
- <h3 class="section-title">💬 僕からあなたへ</h3><div class="card"><p>${comment(r)}</p></div>
- <h3 class="section-title">彼から新しい行動があったら</h3><div class="card"><p>またこのチェックを使ってみてください☺️ 前回の回答を残したまま、変わったところだけ直して確認できます。</p><button class="btn" onclick="recheck()">🔄 もう一度チェックする →</button><button class="reset" onclick="resetAll()">すべての回答をリセット</button></div>
- <div class="card install"><h3>📱 このチェックをスマホに残しておく</h3><p>ホーム画面に追加しておけば、次からnoteを開かなくても使えます。</p><p class="small">iPhone：共有 →「ホーム画面に追加」<br>Android：ブラウザのメニュー →「アプリをインストール」または「ホーム画面に追加」</p></div>`)
+
+function showResult(){
+
+ const r=resultData();
+
+ const map={
+   heart:[
+     "💗",
+     "かなり脈ありの可能性があります！",
+     "彼はあなたに興味を持つだけでなく、実際に会おうとする行動まで出ています。"
+   ],
+
+   flower:[
+     "🌷",
+     "興味はありそうです",
+     "脈ありサインが見えています♡"
+   ],
+
+   sprout:[
+     "🌱",
+     "脈ありサインが少しずつ出ています",
+     "今確認できているサインを大切にしながら、もう少し行動を見ていきましょう。"
+   ],
+
+   search:[
+     "🔍",
+     "まだ気持ちを見極める段階です",
+     "今は判断材料が少ないだけ。これからの彼の行動を見ていきましょう。"
+   ]
+ };
+
+ const m=map[r.level];
+
+ $("rEmoji").textContent=m[0];
+ $("rTitle").textContent=m[1];
+ $("rSub").textContent=m[2];
+
+ const yesItems=qs.map(
+   (q,j)=>answers[j]==="yes" ? q.yes : null
+ ).filter(Boolean);
+
+ $("confirmed").innerHTML=yesItems.length
+   ?yesItems.map(
+      x=>`<div class="checkitem">✓ ${x}</div>`
+    ).join("")
+   :"<div>今のところ、はっきり確認できた行動はまだありません。</div>";
+
+ $("watch").textContent=
+   (answers[4]!=="yes"||answers[5]!=="yes")
+   ?"次は、彼から「会おう」という行動や、具体的に予定を決めようとする行動が出てくるかを見ていきましょう。"
+   :"会う約束だけでなく、実際に会ったときの扱いや、その後も次の予定につながっていくかを見ていきましょう。";
+
+ $("advice").innerHTML=
+   (answers[4]!=="yes")
+   ?"<b>行ってみたい場所の話題を一つ出してみましょう。</b><br><br>「このお店、前から気になってるんよね」くらいで大丈夫。すぐにあなたから誘わず、その話題から彼が会う方向に進めてくれるか見てみましょう。"
+   :"<b>今出ている彼の行動を、そのまま見ていきましょう。</b><br><br>答えを急いで聞くより、約束を守る・会う時間を作る・次の予定を決めるなど、これからも行動が続くかを確認してみてください。";
+
+ $("message").textContent=
+   r.level==="search"
+   ?"今は「脈なし」と決める必要はありません。まだ確認できていない項目はマイナスではなく、これから見られる判断材料です。"
+   :"彼からの行動に、あなたへの興味を感じるサインが出ていますね☺️ 今出ているサインを大切にしながら、ここからも彼の行動を一つずつ確認していきましょう。";
+
+ screen("result");
 }
-function recheck(){prev=[...ans];localStorage.setItem("kimochi_previous",JSON.stringify(prev));question(0)}
-function resetAll(){if(confirm("すべての回答を消して最初からチェックしますか？")){ans=Array(8).fill(null);prev=null;localStorage.removeItem("kimochi_answers");localStorage.removeItem("kimochi_previous");start()}}
-start();
-if("serviceWorker" in navigator) navigator.serviceWorker.register("./sw.js").catch(()=>{});
-</script></body></html>
+
+function restart(){
+ i=0;
+ screen("quiz");
+ render();
+}
+
+function resetAll(){
+ if(confirm("すべての回答をリセットしますか？")){
+   answers=[];
+   localStorage.removeItem("kimochiAnswers");
+   screen("start");
+ }
+}
+
+if("serviceWorker" in navigator){
+ navigator.serviceWorker.register("./sw.js");
+}
+</script>
+
+</body>
+</html>
