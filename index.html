@@ -3,22 +3,20 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#fff8fa">
-
+<meta name="theme-color" content="#fffafa">
 <title>彼の気持ちチェック｜あと1分。</title>
-
 <link rel="manifest" href="manifest.json">
 
 <style>
 :root{
-  --pink:#ff6680;
-  --pink-dark:#e95672;
-  --pink-soft:#fff1f4;
-  --pink-pale:#fff8fa;
-  --ink:#292527;
-  --muted:#81777b;
-  --line:#f1d9df;
-  --white:#ffffff;
+  --pink:#ff5f80;
+  --pink-dark:#ef4f72;
+  --pink-soft:#fff0f4;
+  --pink-soft2:#fff7f9;
+  --ink:#272326;
+  --muted:#756d71;
+  --line:#f1d9e0;
+  --white:#fff;
 }
 
 *{
@@ -32,7 +30,7 @@ html{
 body{
   margin:0;
   background:
-    linear-gradient(180deg,#fff9fa 0%,#ffffff 55%,#fffafa 100%);
+    radial-gradient(circle at 50% 0%,#fff3f6 0,#fffafa 30%,#fff 70%);
   color:var(--ink);
   font-family:
     -apple-system,
@@ -53,43 +51,216 @@ button{
   min-height:100vh;
   margin:0 auto;
   padding:
-    calc(24px + env(safe-area-inset-top))
-    22px
-    calc(42px + env(safe-area-inset-bottom));
+    calc(18px + env(safe-area-inset-top))
+    20px
+    calc(46px + env(safe-area-inset-bottom));
+}
+
+.hidden{
+  display:none!important;
 }
 
 /* =========================
-   共通
+   TOP
 ========================= */
 
-.hidden{
-  display:none !important;
+.hero{
+  display:block;
+  width:100%;
+  height:auto;
+  max-height:320px;
+  object-fit:cover;
+  object-position:center;
+  border-radius:0 0 28px 28px;
+  margin:0 auto 20px;
+  box-shadow:
+    0 18px 42px rgba(180,100,120,.10);
 }
 
 .brand{
   text-align:center;
-  font-size:13px;
-  font-weight:800;
-  letter-spacing:.05em;
-  margin:4px 0 18px;
+  margin:0 0 8px;
+  font-size:14px;
+  font-weight:900;
+  letter-spacing:.04em;
 }
 
+.heroTitle{
+  margin:0;
+  text-align:center;
+  color:var(--pink-dark);
+  font-size:39px;
+  line-height:1.22;
+  font-weight:900;
+  letter-spacing:-1.8px;
+}
+
+.heroLead{
+  margin:18px 0 28px;
+  text-align:center;
+  color:#302b2d;
+  font-size:16px;
+  line-height:1.9;
+  font-weight:500;
+}
+
+.heroLead strong{
+  font-weight:800;
+}
+
+/* =========================
+   8 QUESTIONS CARD
+========================= */
+
+.guideCard{
+  overflow:hidden;
+  margin:0 0 24px;
+  padding:23px 20px 8px;
+  border:1px solid var(--line);
+  border-radius:29px;
+  background:
+    linear-gradient(145deg,#fff 0%,#fffafb 100%);
+  box-shadow:
+    0 18px 45px rgba(103,65,76,.07);
+}
+
+.guideEyebrow{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin:0 0 13px;
+  color:#f07791;
+  font-size:11px;
+  font-weight:900;
+  letter-spacing:.22em;
+}
+
+.guideEyebrow::after{
+  content:"";
+  flex:1;
+  height:1px;
+  background:#f0bdca;
+}
+
+.guideTitle{
+  margin:0;
+  font-size:24px;
+  line-height:1.4;
+  font-weight:900;
+  letter-spacing:-.5px;
+}
+
+.guideDescription{
+  margin:5px 0 13px;
+  color:#83797d;
+  font-size:13px;
+  line-height:1.7;
+}
+
+/* 3段 */
+
+.guideRow{
+  display:grid;
+  grid-template-columns:56px 1fr 58px;
+  gap:12px;
+  align-items:center;
+  min-height:118px;
+  padding:15px 0;
+  border-top:1px solid #f4e5e9;
+}
+
+.guideRow:first-of-type{
+  border-top:0;
+}
+
+.numberBubble{
+  width:52px;
+  height:52px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:50%;
+  background:
+    linear-gradient(145deg,#fff1f4,#ffe8ee);
+  color:var(--pink-dark);
+  font-size:17px;
+  font-weight:900;
+}
+
+.guideCopy{
+  min-width:0;
+}
+
+.guideRowTitle{
+  margin-bottom:5px;
+  font-size:17px;
+  line-height:1.45;
+  font-weight:900;
+}
+
+.guideRowText{
+  color:#7d7478;
+  font-size:12.5px;
+  line-height:1.65;
+}
+
+/* 右側の小イラスト */
+
+.miniArt{
+  position:relative;
+  width:58px;
+  height:58px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:50%;
+  background:#fff3f6;
+}
+
+.miniArt svg{
+  width:44px;
+  height:44px;
+  overflow:visible;
+}
+
+.miniArt svg *{
+  stroke:#7d676d;
+  stroke-width:1.7;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
+
+.miniArt .pinkFill{
+  fill:#ff7f99;
+  stroke:none;
+}
+
+.miniArt .softFill{
+  fill:#fff;
+}
+
+.miniArt .none{
+  fill:none;
+}
+
+/* =========================
+   BUTTON
+========================= */
+
 .btn{
-  display:block;
   width:100%;
-  min-height:60px;
+  min-height:61px;
   border:0;
   border-radius:999px;
-  padding:17px 20px;
+  padding:17px 18px;
   background:
-    linear-gradient(135deg,#ff7088,#ff5e79);
+    linear-gradient(135deg,#ff718b,#ff5878);
   color:#fff;
   font-size:18px;
-  font-weight:800;
+  font-weight:900;
   letter-spacing:.02em;
-  cursor:pointer;
   box-shadow:
-    0 12px 28px rgba(255,102,128,.24);
+    0 13px 28px rgba(255,95,128,.25);
   -webkit-tap-highlight-color:transparent;
 }
 
@@ -99,151 +270,48 @@ button{
 
 .btn.secondary{
   background:#fff;
-  color:#786e72;
+  color:#746b6f;
   border:1px solid var(--line);
   box-shadow:none;
 }
 
-.card{
-  background:rgba(255,255,255,.96);
-  border:1px solid var(--line);
-  border-radius:26px;
-  padding:22px 20px;
-  box-shadow:
-    0 12px 34px rgba(91,54,65,.06);
-}
-
-.top{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:12px;
-  margin-bottom:14px;
-  font-size:14px;
-  font-weight:800;
-}
-
-.top span:last-child{
-  color:var(--pink-dark);
-}
-
-/* =========================
-   スタート画面
-========================= */
-
-.hero{
-  display:block;
-  width:100%;
-  max-height:310px;
-  object-fit:cover;
-  object-position:center;
-  border-radius:28px;
-  margin:0 auto 24px;
-  box-shadow:
-    0 16px 42px rgba(177,91,111,.12);
-}
-
-#start h1{
-  margin:0 0 18px;
-  color:var(--pink);
-  font-size:34px;
-  line-height:1.2;
-  letter-spacing:-1px;
-  font-weight:900;
-  white-space:nowrap;
-}
-
-.lead{
-  margin:0;
-  font-size:17px;
-  line-height:1.9;
-  color:#393436;
-}
-
-#start > .card{
-  position:relative;
-  overflow:hidden;
-  margin:28px 0 24px;
-  padding:27px 22px 24px;
-  background:
-    linear-gradient(145deg,#ffffff 0%,#fffafb 100%);
-}
-
-.start-label{
-  margin-bottom:9px;
-  color:var(--pink-dark);
-  font-size:11px;
-  font-weight:900;
-  letter-spacing:.20em;
-}
-
-.start-title{
-  margin:0;
-  font-size:22px;
-  line-height:1.45;
-  font-weight:900;
-}
-
-.start-description{
-  margin:10px 0 18px;
-  padding-bottom:18px;
-  border-bottom:1px solid #f4e5e9;
-  color:var(--muted);
-  font-size:13px;
-  line-height:1.75;
-}
-
-.start-list{
-  display:grid;
-  gap:13px;
-}
-
-.start-item{
-  display:flex;
-  align-items:flex-start;
-  gap:11px;
-  font-size:15px;
-  line-height:1.6;
-  font-weight:700;
-}
-
-.check{
-  flex:0 0 23px;
-  width:23px;
-  height:23px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  margin-top:1px;
-  border-radius:50%;
-  background:var(--pink-soft);
-  color:var(--pink-dark);
-  font-size:13px;
-  font-weight:900;
-}
-
 .note{
-  margin-top:16px;
-  color:var(--muted);
-  font-size:12px;
+  margin:16px 2px 0;
+  color:#8a8185;
+  font-size:11px;
   line-height:1.75;
 }
 
 /* =========================
-   質問画面
+   QUIZ
 ========================= */
 
 #quiz{
-  padding-top:8px;
+  padding-top:7px;
+}
+
+.quizTop,
+.resultTop{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  margin-bottom:13px;
+  font-size:14px;
+  font-weight:900;
+}
+
+.quizTop span:last-child,
+.resultTop span:last-child{
+  color:var(--pink-dark);
 }
 
 .progress{
-  width:100%;
   height:8px;
   overflow:hidden;
-  margin:8px 0 30px;
+  margin-bottom:27px;
   border-radius:999px;
-  background:#f7e5e9;
+  background:#f8e5ea;
 }
 
 .progress > div{
@@ -251,34 +319,32 @@ button{
   width:0;
   border-radius:999px;
   background:
-    linear-gradient(90deg,#ff8aa0,#ff6680);
+    linear-gradient(90deg,#ff91a6,#ff6682);
   transition:width .25s ease;
 }
 
-.quiz-box{
-  position:relative;
-  padding:28px 21px 23px;
+.quizCard{
+  padding:27px 20px 21px;
   border:1px solid var(--line);
-  border-radius:28px;
-  background:rgba(255,255,255,.97);
+  border-radius:29px;
+  background:#fff;
   box-shadow:
-    0 15px 42px rgba(91,54,65,.07);
+    0 15px 40px rgba(92,56,67,.07);
 }
 
 .qno{
   margin-bottom:11px;
   color:var(--pink-dark);
-  font-size:13px;
+  font-size:12px;
   font-weight:900;
-  letter-spacing:.08em;
+  letter-spacing:.15em;
 }
 
 .question{
-  margin-bottom:25px;
-  font-size:22px;
+  margin-bottom:24px;
+  font-size:21px;
   line-height:1.65;
   font-weight:900;
-  letter-spacing:.01em;
 }
 
 .options{
@@ -290,33 +356,26 @@ button{
   position:relative;
   width:100%;
   min-height:60px;
-  padding:16px 18px;
+  padding:16px 17px;
   border:1.5px solid #f0dce2;
   border-radius:19px;
   background:#fff;
-  color:#393235;
+  color:#373134;
   text-align:left;
-  font-size:16px;
+  font-size:15px;
   line-height:1.55;
-  cursor:pointer;
   box-shadow:
-    0 5px 16px rgba(80,50,60,.035);
+    0 5px 15px rgba(80,50,60,.035);
   -webkit-tap-highlight-color:transparent;
 }
 
-.option:active{
-  transform:scale(.99);
-}
-
 .option.selected{
-  padding-left:47px;
-  border-color:#ff8da1;
+  padding-left:48px;
+  border-color:#ff8ea3;
   background:
-    linear-gradient(135deg,#fff1f4,#fff8fa);
-  color:#c9435d;
+    linear-gradient(135deg,#fff0f4,#fff9fa);
+  color:#c94360;
   font-weight:800;
-  box-shadow:
-    0 7px 20px rgba(255,102,128,.08);
 }
 
 .option.selected::before{
@@ -346,111 +405,93 @@ button{
 
 .nav .btn{
   min-height:56px;
-  font-size:16px;
+  font-size:15px;
 }
 
 /* =========================
-   完了画面
+   DONE
 ========================= */
 
 #done{
-  padding-top:45px;
+  padding-top:46px;
   text-align:center;
 }
 
-.done-heart{
-  width:84px;
-  height:84px;
+.doneIcon{
+  width:88px;
+  height:88px;
   display:flex;
   align-items:center;
   justify-content:center;
-  margin:0 auto 22px;
+  margin:0 auto 20px;
   border-radius:50%;
   background:
-    linear-gradient(145deg,#fff0f3,#fff9fa);
-  font-size:43px;
+    linear-gradient(145deg,#fff0f4,#fff9fa);
+  font-size:44px;
   box-shadow:
-    0 12px 32px rgba(255,102,128,.13);
+    0 13px 32px rgba(255,102,128,.13);
 }
 
-.done-label{
+.doneSmall{
   margin-bottom:10px;
   color:var(--pink-dark);
-  font-size:12px;
+  font-size:11px;
   font-weight:900;
-  letter-spacing:.16em;
+  letter-spacing:.19em;
 }
 
-.done-title{
-  margin:0 0 18px;
+.doneTitle{
+  margin:0 0 16px;
   font-size:29px;
   line-height:1.5;
   font-weight:900;
 }
 
-.done-text{
-  margin:0 auto 28px;
-  max-width:390px;
-  color:#665d61;
-  font-size:16px;
-  line-height:1.85;
+.doneText{
+  margin:0 0 28px;
+  color:#6f666a;
+  font-size:15px;
+  line-height:1.9;
 }
 
 /* =========================
-   結果画面
+   RESULT
 ========================= */
 
 #result{
-  padding-top:5px;
+  padding-top:6px;
 }
 
 .resultHero{
   position:relative;
   overflow:hidden;
-  margin:12px 0 26px;
+  margin:10px 0 28px;
   padding:30px 20px 27px;
-  border:1px solid #f3d6de;
+  border:1px solid #f1d5dd;
   border-radius:30px;
   background:
-    radial-gradient(circle at 10% 10%,rgba(255,255,255,.9),transparent 32%),
+    radial-gradient(circle at 15% 5%,#fff 0,transparent 35%),
     linear-gradient(145deg,#fff0f4,#fff9fa);
   text-align:center;
   box-shadow:
     0 16px 42px rgba(177,91,111,.09);
 }
 
-.resultHero::after{
-  content:"";
-  position:absolute;
-  width:130px;
-  height:130px;
-  right:-45px;
-  bottom:-55px;
-  border-radius:50%;
-  background:rgba(255,255,255,.45);
-}
-
 .resultEmoji{
-  position:relative;
-  z-index:1;
-  margin-bottom:8px;
-  font-size:49px;
+  margin-bottom:7px;
+  font-size:48px;
 }
 
 .resultTitle{
-  position:relative;
-  z-index:1;
   margin-bottom:10px;
-  font-size:24px;
+  font-size:23px;
   line-height:1.5;
   font-weight:900;
 }
 
-#rSub{
-  position:relative;
-  z-index:1;
-  color:#665c60;
-  font-size:15px;
+.resultSub{
+  color:#675f62;
+  font-size:14px;
   line-height:1.8;
 }
 
@@ -458,11 +499,10 @@ button{
   display:flex;
   align-items:center;
   gap:9px;
-  margin:28px 4px 12px;
-  color:#e25e79;
+  margin:28px 3px 12px;
+  color:#df5b77;
   font-size:14px;
   font-weight:900;
-  letter-spacing:.04em;
 }
 
 .sectionTitle::before{
@@ -473,16 +513,23 @@ button{
   background:var(--pink);
 }
 
-#result .card{
-  margin:0 0 18px;
-  line-height:1.8;
+.resultCard{
+  margin-bottom:17px;
+  padding:21px 19px;
+  border:1px solid var(--line);
+  border-radius:25px;
+  background:#fff;
+  color:#443d40;
+  font-size:15px;
+  line-height:1.9;
+  box-shadow:
+    0 11px 31px rgba(91,54,65,.055);
 }
 
 .checkitem{
   position:relative;
-  padding:14px 4px 14px 34px;
+  padding:13px 3px 13px 34px;
   border-bottom:1px solid #f4e7ea;
-  font-size:15px;
   line-height:1.65;
 }
 
@@ -494,7 +541,7 @@ button{
   content:"✓";
   position:absolute;
   left:2px;
-  top:15px;
+  top:14px;
   width:21px;
   height:21px;
   display:flex;
@@ -503,84 +550,95 @@ button{
   border-radius:50%;
   background:var(--pink-soft);
   color:var(--pink-dark);
-  font-size:12px;
+  font-size:11px;
   font-weight:900;
 }
 
-.message{
-  color:#443d40;
-  font-size:15px;
-  line-height:1.9 !important;
-}
-
 .tip{
-  margin-bottom:18px;
-  padding:22px 20px;
-  border:1px solid #f1cfd8;
-  border-radius:26px;
+  margin-bottom:17px;
+  padding:22px 19px;
+  border:1px solid #f0ccd6;
+  border-radius:25px;
   background:
-    linear-gradient(145deg,#fff6f8,#ffffff);
+    linear-gradient(145deg,#fff5f8,#fff);
   color:#443d40;
   font-size:15px;
   line-height:1.9;
   box-shadow:
-    0 12px 34px rgba(91,54,65,.06);
+    0 11px 31px rgba(91,54,65,.055);
 }
 
 .tip b{
-  color:#d64f6b;
-  font-size:16px;
+  color:#d64e6b;
 }
 
-.result-actions{
-  margin-top:30px;
+.resultButtons{
+  margin-top:29px;
 }
 
-.result-actions .btn + .btn{
+.resultButtons .btn + .btn{
   margin-top:12px;
 }
 
 /* =========================
-   小さいiPhone
+   SMALL PHONE
 ========================= */
 
 @media(max-width:390px){
 
   .app{
-    padding-left:18px;
-    padding-right:18px;
+    padding-left:17px;
+    padding-right:17px;
   }
 
-  #start h1{
-    font-size:30px;
+  .heroTitle{
+    font-size:34px;
   }
 
-  .lead{
-    font-size:16px;
-  }
-
-  .start-title{
-    font-size:20px;
-  }
-
-  .question{
-    font-size:20px;
-  }
-
-  .quiz-box{
-    padding:24px 17px 20px;
-  }
-
-  .option{
+  .heroLead{
     font-size:15px;
   }
 
-  .done-title{
-    font-size:26px;
+  .guideCard{
+    padding-left:17px;
+    padding-right:17px;
   }
 
-  .resultTitle{
+  .guideTitle{
     font-size:22px;
+  }
+
+  .guideRow{
+    grid-template-columns:50px 1fr 50px;
+    gap:9px;
+  }
+
+  .numberBubble{
+    width:47px;
+    height:47px;
+    font-size:15px;
+  }
+
+  .miniArt{
+    width:50px;
+    height:50px;
+  }
+
+  .miniArt svg{
+    width:38px;
+    height:38px;
+  }
+
+  .guideRowTitle{
+    font-size:15.5px;
+  }
+
+  .guideRowText{
+    font-size:11.5px;
+  }
+
+  .question{
+    font-size:19px;
   }
 }
 </style>
@@ -590,59 +648,202 @@ button{
 
 <main class="app">
 
-<!-- =========================
-     START
-========================= -->
-
+<!-- START -->
 <section id="start">
-
-  <div class="brand">あと1分。</div>
 
   <img
     class="hero"
     src="hero-girl.png"
-    alt="スマホを持つ女性のイラスト"
+    alt="スマホを持ちながら恋愛について考える女性"
   >
 
-  <h1>彼の気持ちチェック</h1>
+  <div class="brand">
+    あと1分。
+  </div>
 
-  <p class="lead">
-    LINEからデート前までの彼の行動を、一緒に確認してみましょう☺️
+  <h1 class="heroTitle">
+    彼の気持ちチェック
+  </h1>
+
+  <p class="heroLead">
+    LINE、誘い方、デートの約束。<br>
+    彼の<strong>「言葉」ではなく「行動」</strong>を<br>
+    一緒に見ていきましょう。
   </p>
 
-  <div class="card">
 
-    <div class="start-label">
+  <div class="guideCard">
+
+    <div class="guideEyebrow">
       8 QUESTIONS
     </div>
 
-    <div class="start-title">
-      8つの質問に答えるだけ
-    </div>
+    <h2 class="guideTitle">
+      8つの質問でわかること
+    </h2>
 
-    <div class="start-description">
-      今の彼との状況を整理して、次に見るべきポイントを確認できます
-    </div>
+    <p class="guideDescription">
+      今の彼との状況を整理して、次に見るべきポイントを確認できます。
+    </p>
 
-    <div class="start-list">
 
-      <div class="start-item">
-        <span class="check">✓</span>
-        <span>今確認できている彼の行動</span>
+    <!-- 01 -->
+    <div class="guideRow">
+
+      <div class="numberBubble">
+        01
       </div>
 
-      <div class="start-item">
-        <span class="check">✓</span>
-        <span>これから見てほしいポイント</span>
+      <div class="guideCopy">
+
+        <div class="guideRowTitle">
+          今の彼の行動
+        </div>
+
+        <div class="guideRowText">
+          脈ありにつながる行動が、<br>
+          今どれくらい確認できているか。
+        </div>
+
       </div>
 
-      <div class="start-item">
-        <span class="check">✓</span>
-        <span>今のあなたにやってほしいこと</span>
+      <div class="miniArt">
+
+        <svg viewBox="0 0 48 48" aria-hidden="true">
+          <rect class="softFill" x="10" y="8" width="28" height="25" rx="7"></rect>
+          <path class="softFill" d="M17 32 L14 40 L23 34"></path>
+          <circle class="pinkFill" cx="19" cy="21" r="2"></circle>
+          <circle class="pinkFill" cx="24" cy="21" r="2"></circle>
+          <circle class="pinkFill" cx="29" cy="21" r="2"></circle>
+        </svg>
+
       </div>
 
     </div>
+
+
+    <!-- 02 -->
+    <div class="guideRow">
+
+      <div class="numberBubble">
+        02
+      </div>
+
+      <div class="guideCopy">
+
+        <div class="guideRowTitle">
+          これから見るポイント
+        </div>
+
+        <div class="guideRowText">
+          LINE・誘い・デートで、<br>
+          次に注目したい彼の行動。
+        </div>
+
+      </div>
+
+      <div class="miniArt">
+
+        <svg viewBox="0 0 48 48" aria-hidden="true">
+
+          <rect
+            class="softFill"
+            x="9"
+            y="11"
+            width="30"
+            height="28"
+            rx="4">
+          </rect>
+
+          <path
+            class="none"
+            d="M9 18H39">
+          </path>
+
+          <path
+            class="none"
+            d="M16 7V15 M32 7V15">
+          </path>
+
+          <path
+            class="pinkFill"
+            d="M24 31
+               C19 27 17 24 19 21
+               C21 19 23 20 24 22
+               C25 20 28 19 30 21
+               C32 24 29 27 24 31Z">
+          </path>
+
+        </svg>
+
+      </div>
+
+    </div>
+
+
+    <!-- 03 -->
+    <div class="guideRow">
+
+      <div class="numberBubble">
+        03
+      </div>
+
+      <div class="guideCopy">
+
+        <div class="guideRowTitle">
+          今のあなたにやってほしいこと
+        </div>
+
+        <div class="guideRowText">
+          今の二人の状況に合わせて、<br>
+          次にどうすればいいかを提案。
+        </div>
+
+      </div>
+
+      <div class="miniArt">
+
+        <svg viewBox="0 0 48 48" aria-hidden="true">
+
+          <path
+            class="softFill"
+            d="M24 7
+               C16 7 11 13 11 20
+               C11 25 14 28 17 31
+               C19 33 19 36 19 38
+               H29
+               C29 35 29 33 31 31
+               C35 28 37 24 37 20
+               C37 13 32 7 24 7Z">
+          </path>
+
+          <path
+            class="none"
+            d="M20 42H28 M21 38H27">
+          </path>
+
+          <path
+            class="pinkFill"
+            d="M24 28
+               C20 25 19 22 21 20
+               C22 19 24 20 24 21
+               C25 20 27 19 28 20
+               C30 22 28 25 24 28Z">
+          </path>
+
+          <path
+            class="none"
+            d="M24 2V5 M8 9L11 12 M40 9L37 12">
+          </path>
+
+        </svg>
+
+      </div>
+
+    </div>
+
   </div>
+
 
   <button
     class="btn"
@@ -658,54 +859,55 @@ button{
 </section>
 
 
-<!-- =========================
-     QUIZ
-========================= -->
-
+<!-- QUIZ -->
 <section id="quiz" class="hidden">
 
-  <div class="top">
-    <span>彼の気持ちチェック</span>
+  <div class="quizTop">
+
+    <span>
+      彼の気持ちチェック
+    </span>
+
     <span id="count"></span>
+
   </div>
 
   <div class="progress">
     <div id="bar"></div>
   </div>
 
-  <div class="quiz-box">
+  <div class="quizCard">
 
     <div
       class="qno"
-      id="qno"
-    ></div>
+      id="qno">
+    </div>
 
     <div
       class="question"
-      id="question"
-    ></div>
+      id="question">
+    </div>
 
     <div
       class="options"
-      id="options"
-    ></div>
+      id="options">
+    </div>
 
   </div>
+
 
   <div class="nav">
 
     <button
       class="btn secondary"
-      onclick="back()"
-    >
+      onclick="back()">
       ← 戻る
     </button>
 
     <button
       class="btn"
       id="next"
-      onclick="next()"
-    >
+      onclick="next()">
       次へ →
     </button>
 
@@ -714,64 +916,69 @@ button{
 </section>
 
 
-<!-- =========================
-     DONE
-========================= -->
-
+<!-- DONE -->
 <section id="done" class="hidden">
 
-  <div class="done-heart">
+  <div class="doneIcon">
     💗
   </div>
 
-  <div class="done-label">
+  <div class="doneSmall">
     CHECK COMPLETE
   </div>
 
-  <h2 class="done-title">
+  <h2 class="doneTitle">
     8問すべて<br>
     回答できました
   </h2>
 
-  <p class="done-text">
+  <p class="doneText">
     お疲れさまでした☺️<br>
-    今の彼の行動をもとに、彼の気持ちを一緒に確認してみましょう。
+    今の彼の行動をもとに、<br>
+    彼の気持ちを一緒に確認してみましょう。
   </p>
 
   <button
     class="btn"
-    onclick="showResult()"
-  >
+    onclick="showResult()">
     彼の気持ちを確認する ♡
   </button>
 
 </section>
 
 
-<!-- =========================
-     RESULT
-========================= -->
-
+<!-- RESULT -->
 <section id="result" class="hidden">
 
-  <div class="top">
-    <span>彼の気持ちチェック</span>
-    <span>RESULT</span>
+  <div class="resultTop">
+
+    <span>
+      彼の気持ちチェック
+    </span>
+
+    <span>
+      RESULT
+    </span>
+
   </div>
+
 
   <div class="resultHero">
 
     <div
       class="resultEmoji"
-      id="rEmoji"
-    ></div>
+      id="rEmoji">
+    </div>
 
     <div
       class="resultTitle"
-      id="rTitle"
-    ></div>
+      id="rTitle">
+    </div>
 
-    <div id="rSub"></div>
+    <div
+      class="resultSub"
+      id="rSub">
+    </div>
 
   </div>
 
@@ -781,9 +988,9 @@ button{
   </div>
 
   <div
-    class="card"
-    id="confirmed"
-  ></div>
+    class="resultCard"
+    id="confirmed">
+  </div>
 
 
   <div class="sectionTitle">
@@ -791,9 +998,9 @@ button{
   </div>
 
   <div
-    class="card message"
-    id="watch"
-  ></div>
+    class="resultCard"
+    id="watch">
+  </div>
 
 
   <div class="sectionTitle">
@@ -802,8 +1009,8 @@ button{
 
   <div
     class="tip"
-    id="advice"
-  ></div>
+    id="advice">
+  </div>
 
 
   <div class="sectionTitle">
@@ -811,24 +1018,22 @@ button{
   </div>
 
   <div
-    class="card message"
-    id="message"
-  ></div>
+    class="resultCard"
+    id="message">
+  </div>
 
 
-  <div class="result-actions">
+  <div class="resultButtons">
 
     <button
       class="btn"
-      onclick="restart()"
-    >
+      onclick="restart()">
       もう一度チェックする →
     </button>
 
     <button
       class="btn secondary"
-      onclick="resetAll()"
-    >
+      onclick="resetAll()">
       すべての回答をリセット
     </button>
 
@@ -902,12 +1107,12 @@ const qs = [
 ];
 
 
-let answers = JSON.parse(
-  localStorage.getItem("kimochiAnswers") || "[]"
-);
+let answers =
+  JSON.parse(
+    localStorage.getItem("kimochiAnswers") || "[]"
+  );
 
 let i = 0;
-
 
 const $ = id =>
   document.getElementById(id);
@@ -916,17 +1121,16 @@ const $ = id =>
 function screen(id){
 
   ["start","quiz","done","result"]
-    .forEach(x =>
-      $(x).classList.toggle(
-        "hidden",
-        x !== id
-      )
-    );
+    .forEach(name => {
 
-  window.scrollTo({
-    top:0,
-    behavior:"instant"
-  });
+      $(name).classList.toggle(
+        "hidden",
+        name !== id
+      );
+
+    });
+
+  window.scrollTo(0,0);
 
 }
 
@@ -945,10 +1149,10 @@ function startCheck(){
 function render(){
 
   $("count").textContent =
-    `${i + 1} / ${qs.length}`;
+    `${i + 1} / 8`;
 
   $("bar").style.width =
-    `${((i + 1) / qs.length) * 100}%`;
+    `${((i + 1) / 8) * 100}%`;
 
   $("qno").textContent =
     `QUESTION ${i + 1}`;
@@ -957,7 +1161,7 @@ function render(){
     qs[i].q;
 
 
-  const opts = [
+  const options = [
 
     ["yes","はい"],
 
@@ -969,7 +1173,7 @@ function render(){
 
 
   $("options").innerHTML =
-    opts.map(([value,text]) => {
+    options.map(([value,text]) => {
 
       const selected =
         answers[i] === value;
@@ -987,7 +1191,7 @@ function render(){
 
 
   $("next").textContent =
-    i === qs.length - 1
+    i === 7
       ? "回答を完了する →"
       : "次へ →";
 
@@ -1021,16 +1225,13 @@ function next(){
   }
 
 
-  if(i < qs.length - 1){
+  if(i < 7){
 
     i++;
 
     render();
 
-    window.scrollTo({
-      top:0,
-      behavior:"smooth"
-    });
+    window.scrollTo(0,0);
 
   }else{
 
@@ -1053,10 +1254,7 @@ function back(){
 
     render();
 
-    window.scrollTo({
-      top:0,
-      behavior:"smooth"
-    });
+    window.scrollTo(0,0);
 
   }
 
@@ -1067,15 +1265,16 @@ function resultData(){
 
   const valid =
     answers.filter(
-      x =>
-        x === "yes" ||
-        x === "no"
+      value =>
+        value === "yes" ||
+        value === "no"
     ).length;
 
 
   const yes =
     answers.filter(
-      x => x === "yes"
+      value =>
+        value === "yes"
     ).length;
 
 
@@ -1083,9 +1282,9 @@ function resultData(){
     new Set(
 
       qs.map(
-        (q,index) =>
+        (question,index) =>
           answers[index] === "yes"
-            ? q.type
+            ? question.type
             : null
       ).filter(Boolean)
 
@@ -1191,26 +1390,27 @@ function showResult(){
 
   const yesItems =
     qs.map(
-      (q,index) =>
+      (question,index) =>
         answers[index] === "yes"
-          ? q.yes
+          ? question.yes
           : null
     ).filter(Boolean);
 
 
-  $("confirmed").innerHTML =
-    yesItems.length
+  if(yesItems.length){
 
-    ? yesItems.map(
+    $("confirmed").innerHTML =
+      yesItems.map(
         item =>
           `<div class="checkitem">${item}</div>`
-      ).join("")
+      ).join("");
 
-    : `
-      <div class="message">
-        今のところ、はっきり確認できた行動はまだありません。
-      </div>
-    `;
+  }else{
+
+    $("confirmed").textContent =
+      "今のところ、はっきり確認できた行動はまだありません。";
+
+  }
 
 
   if(
