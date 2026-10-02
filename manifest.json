@@ -1,0 +1,9 @@
+{
+  "name": "彼の気持ちチェック｜あと1分。",
+  "short_name": "彼の気持ちチェック",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#fff7f6",
+  "theme_color": "#ff6680",
+  "icons": []
+}
